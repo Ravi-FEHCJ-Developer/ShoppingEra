@@ -1,0 +1,336 @@
+/* header */
+header {
+	background: url('http://www.autodatz.com/wp-content/uploads/2017/05/Old-Car-Wallpapers-Hd-36-with-Old-Car-Wallpapers-Hd.jpg');
+	text-align: center;
+	width: 100%;
+	height: auto;
+	background-size: cover;
+	background-attachment: fixed;
+	position: relative;
+	overflow: hidden;
+	border-radius: 0 0 85% 85% / 30%;
+}
+header .overlay{
+	width: 100%;
+	height: 100%;
+	padding: 100px;
+	color: #FFF;
+	text-shadow: 1px 1px 1px #333;
+  background-image: linear-gradient( 135deg, #9f05ff69 10%, #fd5e086b 100%);
+	
+}
+
+h1 {
+	font-family: 'Dancing Script', cursive;
+	font-size: 80px;
+	margin-bottom: 30px;
+}
+
+h3, p {
+	font-family: 'Open Sans', sans-serif;
+	margin-bottom: 30px;
+}
+
+button {
+	border: none;
+	outline: none;
+	padding: 10px 20px;
+	border-radius: 50px;
+	color: #333;
+	background: #fff;
+	margin-bottom: 50px;
+	box-shadow: 0 3px 20px 0 #0000003b;
+}
+button:hover{
+	cursor: pointer;
+}
+
+
+/* parallex-section-one */
+.parallex-section-one
+{
+  background-image: url(../../assets/images/home/parallex1.jpg);
+  height: 300px;
+  width: 100%;
+  background-attachment: fixed;
+  margin: 80px 0 0 0;
+}
+
+
+/* secondsection */
+.secondsection
+{
+  margin: 50px 20px 20px 20px;
+}
+
+
+figure.snip1104 {
+  font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 220px;
+  max-width: 310px;
+  max-height: 220px;
+  width: 100%;
+  background: #000000;
+  color: #ffffff;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+figure.snip1104 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+figure.snip1104 img {
+  max-width: 100%;
+  position: relative;
+  opacity: 0.4;
+}
+
+figure.snip1104 figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+figure.snip1104 h2 {
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  display: inline-block;
+  background: #000000;
+  -webkit-transform: skew(-10deg) rotate(-10deg) translate(0, -50%);
+  transform: skew(-10deg) rotate(-10deg) translate(0, -50%);
+  padding: 12px 5px;
+  margin: 0;
+  top: 50%;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+figure.snip1104 h2 span {
+  font-weight: 800;
+}
+
+figure.snip1104:before {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  content: '';
+  background: #ffffff;
+  position: absolute;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transform: rotate(110deg) translateY(-50%);
+  transform: rotate(110deg) translateY(-50%);
+}
+
+figure.snip1104 a {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+figure.snip1104.blue {
+  background: #123851;
+}
+
+figure.snip1104.blue h2 {
+  background: #0a212f;
+}
+
+figure.snip1104.red {
+  background: #581a14;
+}
+
+figure.snip1104.red h2 {
+  background: #36100c;
+}
+
+figure.snip1104.yellow {
+  background: #7f5006;
+}
+
+figure.snip1104.yellow h2 {
+  background: #583804;
+}
+
+figure.snip1104:hover img,
+figure.snip1104.hover img {
+  opacity: 1;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+figure.snip1104:hover h2,
+figure.snip1104.hover h2 {
+  -webkit-transform: skew(-10deg) rotate(-10deg) translate(-150%, -50%);
+  transform: skew(-10deg) rotate(-10deg) translate(-150%, -50%);
+}
+
+figure.snip1104:hover:before,
+figure.snip1104.hover:before {
+  -webkit-transform: rotate(110deg) translateY(-150%);
+  transform: rotate(110deg) translateY(-150%);
+}
+
+/* end second-section */
+
+
+
+/* third section */
+.lookbook-gallery
+{
+  margin: 100px;
+}
+
+.lookbook-gallery .a11y-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.lookbook-gallery .a11y-only.focusable:active,
+.lookbook-gallery .a11y-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+.lookbook-gallery img {
+  min-width: 10em;
+  max-width: 100%;
+  display: block;
+  background: #ddd;
+}
+.lookbook-gallery .model {
+  margin: 0;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.lookbook-gallery .model .model--caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 0.35em 1.2em 0.25em 0.9em;
+  justify-self: start;
+}
+.lookbook-gallery .model .model--caption .model-hed {
+  font-size: 1.25em;
+  margin: 0.5em 0;
+  font-family: Lora, serif;
+}
+.lookbook-gallery .model .model--caption .model-hed a {
+  color: #fff;
+  text-decoration-color: rgba(255, 255, 255, 0.5);
+}
+.lookbook-gallery .model .model--caption p {
+  font-size: 0.9375em;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.5;
+  margin: 0 0 0.5em 0;
+}
+@media (min-width: 45em) {
+  .lookbook-gallery .lookbook-grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .lookbook-gallery .model {
+    flex: 47.5%;
+    margin: 0.5%;
+  }
+}
+@media (min-width: 65em) {
+  .lookbook-gallery .model {
+    flex: 24.25% 0;
+    margin: 0.25%;
+  }
+  @supports (display: grid) {
+    .lookbook-gallery .lookbook-grid {
+      display: grid;
+      grid-gap: 0.5em;
+      grid-template-columns: repeat(4, minmax(200px, 1fr));
+    }
+    .lookbook-gallery .model {
+      margin: 0;
+    }
+    .lookbook-gallery .model:nth-of-type(4n-1) {
+      grid-row-end: span 2;
+      grid-column-end: span 2;
+    }
+  }
+}
+
+
+/* third section */
+.font-weight-bold
+{
+  font-size: 3rem;
+  color: #b7b794;
+}
+.btn-floating
+{
+  background-color: #0275d8;
+  color: white;
+  border-radius: 50%;
+  padding: 16px;
+  margin: 26px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+.controls-top
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-img-top
+{
+  height: 300px !important;
+}
+
+/* media queries */
+@media(min-width: 0px)
+{
+  .container
+  {
+    max-width: 1350px;
+  }
+}
+
+
+
+
+
+/* parallex-second */
+.parallex-section-second
+{
+  background-image: url(../../assets/images/home/parallex.jpg);
+  height: 300px;
+  width: 100%;
+  background-attachment: fixed;
+  margin: 80px 0 0 0;
+}
