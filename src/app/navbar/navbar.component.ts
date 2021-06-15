@@ -34,7 +34,8 @@ export class NavbarComponent implements OnInit {
     });
 
     //Menu On Hover
-    $('body').on('mouseenter mouseleave','.nav-item',function(e){
+    $('body').on('mouseenter mouseleave','.nav-item',function(e)
+    {
         if ($(window).width() > 750) {
           var _d=$(e.target).closest('.nav-item');_d.addClass('show');
           setTimeout(function(){

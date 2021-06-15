@@ -9,7 +9,7 @@
 
 .first-section
 {
-  background-color: #f1c50e;
+  /* background-color: #f1c50e; */
 }
 
 
@@ -355,6 +355,31 @@ input:focus , textarea
 
 
 /* social media */
+.social-media-section a:hover
+{
+  text-decoration: none;
+}
+
+
+.social-media-section .div
+{
+  -webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+.social-media-section .div:hover, .social-media-section .div:active { 
+  color:#e5e5e5;
+ 	-webkit-transform: scale(1.3);
+	-moz-transform: scale(1.3);
+	-ms-transform: scale(1.3);
+	-o-transform: scale(1.3);
+	transform: scale(1.3); 
+}
+
+
 title {
   display: flex;
   background: #FFEE93;

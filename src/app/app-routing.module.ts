@@ -8,11 +8,13 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { BlogsComponent } from './blogs/blogs.component';
+import { LoginSignUpComponent } from './LoginSignUp/LoginSignUp.component';
 
 const routes: Routes = 
 [
   { path: '', component: HomeComponent },
-  { path: 'aboutUs', component: AboutusComponent }
+  { path: 'aboutUs', component: AboutusComponent },
+  { path: 'login', component: LoginSignUpComponent }
 ];
 
 @NgModule({
@@ -28,4 +30,4 @@ const routes: Routes =
   ]
 })
 export class AppRoutingModule { }
-export const routingComponents = [ NavbarComponent, HomeComponent, FooterComponent, AboutusComponent, BlogsComponent]
+export const routingComponents = [ NavbarComponent, HomeComponent, FooterComponent, AboutusComponent, BlogsComponent, LoginSignUpComponent]
