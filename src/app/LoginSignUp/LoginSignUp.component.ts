@@ -12,22 +12,16 @@ export class LoginSignUpComponent implements OnInit {
 
   ngOnInit() 
   {
-    (function($) { "use strict";
-
-      $('.register').on('click',function(e) {
-        e.preventDefault();        
-        $(this).parent().addClass('loginform');
-        $(this).parent().siblings().removeClass('active');
-        
-        var target = $(this).attr('href');
-
-        $('.tab-content > div').not(target).hide();
-        
-        $(target).fadeIn(600);
-        
+      $(".register").on('click', function(){
+        $(".loginform").toggle("slow", function() {
+        $(".hideregisterform").toggle("slow");
+        });
       });
-
-    })(jQuery); 
+      $(".login").on('click', function(){
+        $(".hideregisterform").toggle("fast", function() {
+          $(".loginform").toggle();
+          }); 
+      });
   }
 
 

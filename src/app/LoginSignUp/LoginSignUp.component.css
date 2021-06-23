@@ -180,11 +180,12 @@ a {
     }
 }
 
-.registerform
+.hideregisterform
 {
     display: none;
 }
-.loginform
+
+.hideloginform
 {
     display: none;
 }
