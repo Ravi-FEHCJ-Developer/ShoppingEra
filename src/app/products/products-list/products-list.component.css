@@ -101,9 +101,17 @@
 /* filter page*/
 .sidebar
 {
+  padding-top: 20px;
+  text-align: center;
   background-color: #e2e9f4;
   background: linear-gradient(-67deg, rgba(200, 216, 231, 0.7), rgba(255, 255, 255, 0.8));
   box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.6), 2px 2px 12px #c8d8e7;
+}
+
+.checkboxex
+{
+  text-align: left;
+  padding: 5px 0px 0px 30px;
 }
 
 label{
@@ -150,6 +158,13 @@ input[type="checkbox"]:disabled + .label-text:before{
 }
 
 
+@media (max-width: 1000px) 
+{
+  .checkboxex
+  {
+    padding: 5px 0px 0px 5px;
+  } 
+}
 
 
 /* single product detail */
@@ -157,6 +172,7 @@ input[type="checkbox"]:disabled + .label-text:before{
 
 .wrapper {
   width: 100%;
+  padding: 16px;
 }
 
 .card {
@@ -187,6 +203,7 @@ input[type="checkbox"]:disabled + .label-text:before{
 }
 
 .card .image {
+  padding: 10px;
   z-index: 999;
   width: 100%;
   display: flex;
@@ -234,8 +251,36 @@ input[type="checkbox"]:disabled + .label-text:before{
 
   
 
+@media (max-width: 1060px)
+{
+  .productsbar
+  {
+     justify-content: center;
+     align-items: center;
+  }
 
+  .card {
+    height: 250px;
+    width: 270px;
+  }
+}
 
+@media (max-width: 930px)
+{
+  .card {
+    height: 210px;
+    width: 230px;
+  }
+}
+
+@media (max-width: 770px)
+{
+  .wrapper 
+  {
+    width: 100%;
+    padding: 2px;
+  }
+}
 
 
 
