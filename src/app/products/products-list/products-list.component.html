@@ -25,7 +25,7 @@
 </section>
 
 <section class="outerbar">
-    <div class="row p-5">
+  <div class="row p-5">
 
       <!-- sidebar -->
         <div class="col-md-3 sidebar">
@@ -59,88 +59,29 @@
           </div>
         </div>
 
-        <!-- productsbar -->
-        <div class="col-md-9 productsbar m-0 d-flex flex-wrap ">
-          <div>
+        <!-- products List -->
+        <div class="col-md-9 productsbar m-0 d-flex flex-wrap">
+
+
+          <div *ngFor="let product of ProductsList | paginate : { id: 'listing_pagination', itemsPerPage: 10, currentPage: page, totalItems: totalRecords }">
             <div class="wrapper p-3">
               <div class="card text-center">
-                  <div class="image"> <img src="../../../assets/images/products/Items/apple.png" width="300"> </div>
+                  <div class="image"> <img src= {{product.p_image}}  width="300"> </div>
                   <div class="about-product text-center">
-                      <h3>Apple</h3>
-                      <h4>Rs. 99</h4> <button class="btn btn-success buy-now">Add To Cart</button>
+                      <h3> {{product.p_name}} </h3>
+                      <h4>Rs. {{product.p_price}} </h4> <button class="btn btn-success buy-now">Add To Cart</button>
                   </div>
               </div>
             </div>
           </div>
-          <div>
-            <div class="wrapper p-3">
-              <div class="card text-center">
-                  <div class="image"> <img src="../../../assets/images/products/Items/apple.png" width="300"> </div>
-                  <div class="about-product text-center">
-                      <h3>Banana</h3>
-                      <h4>Rs. 99</h4> <button class="btn btn-success buy-now">Add To Cart</button>
-                  </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="wrapper p-3">
-              <div class="card text-center">
-                  <div class="image"> <img src="../../../assets/images/products/Items/apple.png" width="300"> </div>
-                  <div class="about-product text-center">
-                      <h3>Wheat</h3>
-                      <h4>Rs. 99</h4> <button class="btn btn-success buy-now">Add To Cart</button>
-                  </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="wrapper p-3">
-              <div class="card text-center">
-                  <div class="image"> <img src="../../../assets/images/products/Items/apple.png" width="300"> </div>
-                  <div class="about-product ">
-                      <h3>Rice</h3>
-                      <h4>Rs. 99</h4> <button class="btn btn-success buy-now">Add To Cart</button>
-                  </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="wrapper p-3">
-              <div class="card text-center">
-                  <div class="image"> <img src="../../../assets/images/products/Items/apple.png" width="300"> </div>
-                  <div class="about-product text-center">
-                      <h3>Shampoo</h3>
-                      <h4>Rs. 99</h4> <button class="btn btn-success buy-now">Add To Cart</button>
-                  </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="wrapper p-3">
-              <div class="card text-center">
-                  <div class="image"> <img src="../../../assets/images/products/Items/apple.png" width="300"> </div>
-                  <div class="about-product text-center">
-                      <h3>Potato</h3>
-                      <h4>Rs. 99</h4> <button class="btn btn-success buy-now">Add To Cart</button>
-                  </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="wrapper p-3">
-              <div class="card text-center">
-                  <div class="image"> <img src="../../../assets/images/products/Items/apple.png" width="300"> </div>
-                  <div class="about-product text-center">
-                      <h3>Cactus</h3>
-                      <h4>Rs. 99</h4> <button class="btn btn-success buy-now">Add To Cart</button>
-                  </div>
-              </div>
-            </div>
-          </div>
+
+          
+          <div class="text-center w-100">
+            <pagination-controls class="pagination-controls" id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls> 
+        </div>
         </div>
         
-    </div>
+  </div>
     
     
-  </section>
+</section>

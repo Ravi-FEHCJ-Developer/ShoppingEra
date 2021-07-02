@@ -224,7 +224,7 @@ input[type="checkbox"]:disabled + .label-text:before{
   position: absolute;
   color: #fff;
   bottom: -50px !important;
-  transition: 0.5s ease-in
+  transition: 1s ease-in
 }
 
 .card:hover .about-product {
@@ -281,13 +281,4 @@ input[type="checkbox"]:disabled + .label-text:before{
     padding: 2px;
   }
 }
-
-
-
-
-
-
-
-
-
 
