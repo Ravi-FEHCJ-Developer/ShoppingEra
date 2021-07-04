@@ -31,17 +31,17 @@
         <div class="col-md-3 sidebar">
           <h1>SideBar</h1>
           <div class="checkboxex">
-            <div class="form-check">
+            <div class="form-check" *ngFor="let category of ProductsCategoryInstance">
               <label>
-                <input type="checkbox" name="check"> <span class="label-text">Fruits</span>
+                <input type="checkbox" name="check"> <span class="label-text">{{ category.item_type }}</span>
               </label>
             </div>
-            <div class="form-check">
+             <div class="form-check">
               <label>
                 <input type="checkbox" name="check"> <span class="label-text">Vegetables</span>
               </label>
             </div>
-            <div class="form-check">
+            <!--<div class="form-check">
               <label>
                 <input type="checkbox" name="check"> <span class="label-text">Cosmetics</span>
               </label>
@@ -55,13 +55,12 @@
               <label>
                 <input type="checkbox" name="check"> <span class="label-text">Body Care</span>
               </label>
-            </div>
+            </div> -->
           </div>
         </div>
 
         <!-- products List -->
         <div class="col-md-9 productsbar m-0 d-flex flex-wrap">
-
 
           <div *ngFor="let product of ProductsList | paginate : { id: 'listing_pagination', itemsPerPage: 10, currentPage: page, totalItems: totalRecords }">
             <div class="wrapper p-3">
