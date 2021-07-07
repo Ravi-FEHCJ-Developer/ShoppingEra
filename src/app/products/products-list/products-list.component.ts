@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+
 import { ProductsList_interface } from 'src/app/interface/productsList_interface';
 import { ProductsListService } from 'src/app/services/productsList/productsList.service';
 
-import { ProductsCategory } from 'src/app/interface/productsCategory_interface';
+import { productsCategory_interface } from 'src/app/interface/productsCategory_interface';
 import { ProductsCategoryService } from 'src/app/services/productsCategory/productsCategory.service';
+
+import { CategoryFilterService } from '../../services/category_filter/categoryFilter.service';
 
 @Component({
   selector: 'app-products-list',
@@ -19,9 +22,15 @@ export class ProductsListComponent implements OnInit
   page : Number = 1
 
   ProductsList : ProductsList_interface[] = [];
-  ProductsCategoryInstance : ProductsCategory[] = [];
+  public ProductsCategory = [];
+
   
-  constructor( private productsListService : ProductsListService , private productsCategoryService : ProductsCategoryService ) 
+  constructor
+  ( 
+    private productsListService : ProductsListService , 
+    private productsCategoryService : ProductsCategoryService,
+    private categoryFilterService : CategoryFilterService  
+  ) 
   { 
     this.data = new Array<any>()
   }
@@ -33,25 +42,24 @@ export class ProductsListComponent implements OnInit
   }
 
 
+  // get categories of products  
   getCategories()
   {
-    this.productsCategoryService.getMasterLocation().subscribe
+    this.productsCategoryService.getAllCategories().subscribe
     (
-      (res) => 
+      (data) => 
       {
-        // console.log(res)
-        // console.log("products Category")
-        this.ProductsCategoryInstance = res    
-        // console.log(this.ProductsCategoryInstance)
+        this.ProductsCategory = data 
       },
-      (err) =>
-      {
-        // return err
+      (err) => 
+      { 
+        console.log(err) 
       }
     )
   }
   
 
+  // get products List
   getProducts()
   {
     this.productsListService.getAllData().subscribe
@@ -67,7 +75,69 @@ export class ProductsListComponent implements OnInit
       { 
         console.log(err) 
       }
-      )
-    }
+    )
+  }
+
+
+
+
+
+
+  // logic to filter the data
+  public FilteredProducts = [];
+  public StoreFilteredProducts = [];
+  public FinalFilteredProducts = [];
+  checkBoxvalue(isChecked: boolean , selecteditem_typeID: any)
+    {
+      if (isChecked) 
+      {
+        this.categoryFilterService.getfiltercategory( selecteditem_typeID ).subscribe
+        (
+          (res) =>
+          {
+            this.FilteredProducts.push(res);                             
+            for(let i = 0; i < this.FilteredProducts.length; i++)
+            {
+              var farray = this.FilteredProducts[i];
+              // convert subarray into array
+              for(let j = 0; j < farray.length; j++)
+              {
+                var obj = farray[j];
+                this.StoreFilteredProducts.push(obj);
+                // remove duplicate objects
+                this.FinalFilteredProducts = this.StoreFilteredProducts.filter(( value, index ) => this.StoreFilteredProducts.indexOf( value ) === index)
+              }
+            } 
+            // store filtered data into main product list to display on view side
+            this.ProductsList = this.FinalFilteredProducts
+          },          
+          (err) =>
+          {
+            console.log(err)
+          }
+        )
+      } 
+      else
+      {
+        for(let i = 0; i<this.FinalFilteredProducts.length; i++)
+        {
+          if ( this.FinalFilteredProducts[i].p_type == selecteditem_typeID) 
+          {
+            // count number of indexex having an array with same key
+            const count = this.FinalFilteredProducts.filter((obj) => obj.p_type === selecteditem_typeID).length;
+            // give an index of an element of array
+            var index = this.FinalFilteredProducts.indexOf(this.FinalFilteredProducts[i]); 
+            this.FinalFilteredProducts.splice(index , count);
+          }
+        }
+
+        // get all products after uncheck all inputs
+        var checked = document.querySelectorAll('input:checked');
+        if (checked.length === 0) 
+        {
+          this.getProducts();
+        }
+      }
+  }
 
 }

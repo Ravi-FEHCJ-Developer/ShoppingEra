@@ -31,31 +31,11 @@
         <div class="col-md-3 sidebar">
           <h1>SideBar</h1>
           <div class="checkboxex">
-            <div class="form-check" *ngFor="let category of ProductsCategoryInstance">
+            <div class="form-check" *ngFor="let category of ProductsCategory">
               <label>
-                <input type="checkbox" name="check"> <span class="label-text">{{ category.item_type }}</span>
+                <input type="checkbox" name="check" (change)="checkBoxvalue($event.target.checked , category.item_typeID)"><span class="label-text">{{category.item_type}}</span>
               </label>
             </div>
-             <div class="form-check">
-              <label>
-                <input type="checkbox" name="check"> <span class="label-text">Vegetables</span>
-              </label>
-            </div>
-            <!--<div class="form-check">
-              <label>
-                <input type="checkbox" name="check"> <span class="label-text">Cosmetics</span>
-              </label>
-            </div>
-            <div class="form-check">
-              <label>
-                <input type="checkbox" name="check"> <span class="label-text">Immunity</span>
-              </label>
-            </div>
-            <div class="form-check">
-              <label>
-                <input type="checkbox" name="check"> <span class="label-text">Body Care</span>
-              </label>
-            </div> -->
           </div>
         </div>
 
