@@ -1,7 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Mate+SC&display=swap');
 
+@media (max-width: 1020px)
+{
+  .secondsection .row
+  {
+    justify-content: center;
+  }
+  
+  .mat-h1, .mat-headline, .mat-typography h1 
+  {
+    font: 400 24px/66px Roboto, "Helvetica Neue", sans-serif !important;
+  }
+}
+@media (max-width: 690px)
+{
+  .secondsection .row
+  {
+    justify-content: center;
+  }
+  .secondsection .snip1104
+  {
+    max-width: 230px;
+  }
+}
+
+h2,h1,p,span
+{
+  font-family: 'Mate SC', serif;
+}
+
 /* header */
-header {
+header 
+{
+  padding: 6%;
 	background: url('http://www.autodatz.com/wp-content/uploads/2017/05/Old-Car-Wallpapers-Hd-36-with-Old-Car-Wallpapers-Hd.jpg');
 	text-align: center;
 	width: 100%;
@@ -10,7 +41,6 @@ header {
 	background-attachment: fixed;
 	position: relative;
 	overflow: hidden;
-	border-radius: 0 0 85% 85% / 30%;
 }
 header .overlay{
 	width: 100%;
@@ -19,29 +49,32 @@ header .overlay{
 	color: #FFF;
 	text-shadow: 1px 1px 1px #333;
   background-image: linear-gradient( 135deg, #369A7E 10%, white 100%);
-  /* Background: -webkit-gradient(radial, 50% 0, 10, 50% 0, 40, from(#369A7E), color-stop(0.49, #369A7E), color-stop(0.51, #fff), to(white)); */
-	
 }
 .overlay p
 {
   font-size: 25px;
 }
 
+.overlay h3
+{
+  padding-top: 2%;
+}
+
 h1 {
-	font-family: 'Dancing Script', cursive;
+  
 	font-size: 80px;
 	margin-bottom: 30px;
   color: #101d2c;
 }
 
 h3, p {
-  font-family: 'Mate SC', serif;
+  
 	margin-bottom: 30px;
   color: #101d2c;
 }
 
 .card-text, .card-title, .model-hed a{
-	font-family: 'Mate SC', serif;
+	
   color: #101d2c;
 }
 
@@ -75,12 +108,14 @@ button:hover{
 /* secondsection */
 .secondsection
 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   margin: 50px 20px 20px 20px;
 }
 
 
 figure.snip1104 {
-  font-family: 'Raleway', Arial, sans-serif;
   position: relative;
   overflow: hidden;
   margin: 10px;
@@ -129,11 +164,6 @@ figure.snip1104 h2
   margin: 0;
   top: 50%;
   text-transform: uppercase;
-  font-weight: 400;
-}
-
-figure.snip1104 h2 span {
-  font-weight: 800;
 }
 
 figure.snip1104:before {
@@ -262,7 +292,6 @@ figure.snip1104.hover:before {
 .lookbook-gallery .model .model--caption .model-hed {
   font-size: 1.25em;
   margin: 0.5em 0;
-  font-family: Lora, serif;
 }
 .lookbook-gallery .model .model--caption .model-hed a {
   color: #fff;
@@ -270,9 +299,7 @@ figure.snip1104.hover:before {
 }
 .lookbook-gallery .model .model--caption p {
   font-size: 0.9375em;
-  font-family: "Open Sans", sans-serif;
   font-style: normal;
-  font-weight: 400;
   color: #fff;
   line-height: 1.5;
   margin: 0 0 0.5em 0;
@@ -312,6 +339,7 @@ figure.snip1104.hover:before {
 /* third section */
 .font-weight-bold
 {
+  margin-top: 10%;
   font-size: 3rem;
   color: #101d2c;
 }
@@ -333,8 +361,13 @@ figure.snip1104.hover:before {
 
 .card
 {
+  box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
+  0 2px 2px rgba(0,0,0,0.12), 
+  0 4px 4px rgba(0,0,0,0.12), 
+  0 8px 8px rgba(0,0,0,0.12),
+  0 16px 16px rgba(0,0,0,0.12);
   border: none;
-  background-color: transparent;
+  background-color: #eef4f9;
 }
 
 .card-img-top
@@ -356,6 +389,7 @@ figure.snip1104.hover:before {
 /* fifth-section */
 .container-fluid
 {
+  margin-top: 10%;
   padding: 0.5%;
   background-image: linear-gradient( 135deg, #369A7E 10%, white 100%);
 }
@@ -371,6 +405,5 @@ figure.snip1104.hover:before {
   background-attachment: fixed;
   opacity: 0.7;
 }
-
 
 

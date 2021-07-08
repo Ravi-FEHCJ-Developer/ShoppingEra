@@ -8,6 +8,7 @@ import { ProductsCategoryService } from 'src/app/services/productsCategory/produ
 
 import { CategoryFilterService } from '../../services/category_filter/categoryFilter.service';
 
+
 @Component({
   selector: 'app-products-list',
   templateUrl: './products-list.component.html',

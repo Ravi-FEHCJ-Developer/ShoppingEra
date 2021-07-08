@@ -33,7 +33,7 @@
           <div class="checkboxex">
             <div class="form-check" *ngFor="let category of ProductsCategory">
               <label>
-                <input type="checkbox" name="check" (change)="checkBoxvalue($event.target.checked , category.item_typeID)"><span class="label-text">{{category.item_type}}</span>
+                <input type="checkbox" class="productscategory" name="check" (change)="checkBoxvalue($event.target.checked , category.item_typeID)"><span class="label-text">{{category.item_type}}</span>
               </label>
             </div>
           </div>

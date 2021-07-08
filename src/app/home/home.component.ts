@@ -9,7 +9,11 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
+
+
+
       $("figure").mouseleave(
         function() {
           $(this).removeClass("hover");
