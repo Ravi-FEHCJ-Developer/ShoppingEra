@@ -89,7 +89,7 @@ export class ProductsListComponent implements OnInit
   public StoreFilteredProducts = [];
   public FinalFilteredProducts = [];
   checkBoxvalue(isChecked: boolean , selecteditem_typeID: any)
-    {
+  {
       if (isChecked) 
       {
         this.categoryFilterService.getfiltercategory( selecteditem_typeID ).subscribe
@@ -139,6 +139,28 @@ export class ProductsListComponent implements OnInit
           this.getProducts();
         }
       }
+  }
+
+  public search_products = [];
+  public doFilter = (value: string) => 
+  { 
+    if(value === '')
+    {
+      console.log("empty")
+      this.search_products = [];
+    } 
+    else
+    {
+      this.categoryFilterService.getSearchedProducts(value).subscribe(
+          (res) => 
+              {
+                // console.log(res[0].p_name)
+                this.search_products.push( 
+                  res.filter((v,i)=>{console.log(v.p_name)}))
+                  console.log(this.search_products)
+              }
+          )
+    }
   }
 
 }

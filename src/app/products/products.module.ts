@@ -6,6 +6,10 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { ProductsRoutingModule  } from './products-routing.module';
 import { ProductsListComponent } from './products-list/products-list.component'; 
 
+// import { MatFormFieldModule } from '@angular/material/form-field';
+// import { MatInputModule } from '@angular/material/input';
+// import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 @NgModule({
   declarations: 
@@ -17,7 +21,10 @@ import { ProductsListComponent } from './products-list/products-list.component';
     FormsModule,
     HttpClientModule,
     NgxPaginationModule,
-    ProductsRoutingModule 
+    ProductsRoutingModule
+//     MatFormFieldModule,
+// MatInputModule,
+// FlexLayoutModule 
   ]
 })
 export class ProductsModule { }
