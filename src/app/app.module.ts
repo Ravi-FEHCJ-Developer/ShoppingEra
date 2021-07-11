@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
+import { AutocompleteLibModule } from 'angular-ng-autocomplete';
+
 // import { MatFormFieldModule } from '@angular/material/form-field';
 // import { MatInputModule } from '@angular/material/input';
 // import { FlexLayoutModule } from '@angular/flex-layout';
@@ -22,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    CommonModule
+    CommonModule,
+    AutocompleteLibModule
     // MatFormFieldModule,
     // MatInputModule,
     // FlexLayoutModule

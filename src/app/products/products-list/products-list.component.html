@@ -7,21 +7,32 @@
 <section>
   <div class="row m-5">
     <div class="col-md-12">
-      <div class="Cards">
-        <div class="CardInner">
-        <label>Search for your favourite products</label>
-        <div class="container">
-          <div class="Icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#657789" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>                                             
-          </div>
-          <div class="InputContainer">
-            <input placeholder="Deal with Your Health...." (keyup)="doFilter($event.target.value)" />
-          </div>
+      <div class="ng-autocomplete">
+        <ng-autocomplete 
+        [data]="ProductsList"
+        [searchKeyword]="keyword"
+          (selected)='selectEvent($event)'
+          (inputChanged)='onChangeSearch($event)'
+          (inputFocused)='onFocused($event)'
+          [itemTemplate]="itemTemplate"
+          [notFoundTemplate]="notFoundTemplate"
+          (keyup)="doFilter($event.target.value)">                                 
+        </ng-autocomplete>
+        
+        <ng-template #itemTemplate let-item>
+          <a [innerHTML]="item.name"></a>
+        </ng-template>
+        
+        <ng-template #notFoundTemplate let-notFound>
+          <div [innerHTML]="notFound"></div>
+        </ng-template>
+        
+        <div class="Icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#657789" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>                                             
         </div>
       </div>
     </div>
   </div>
-</div>
 </section>
 
 
@@ -29,13 +40,10 @@
   <div class="row p-5">
     
     
-    <ul style="z-index: 999;">
-      <li *ngFor="let prod of search_products">{{prod}}</li>
-    </ul>
-      <!-- sidebar -->
-        <div class="col-md-3 sidebar">
-          <h1>SideBar</h1>
-          <div class="checkboxex">
+    <!-- sidebar -->
+    <div class="col-md-3 sidebar">
+      <h1>SideBar</h1>
+      <div class="checkboxex">
             <div class="form-check" *ngFor="let category of ProductsCategory">
               <label>
                 <input type="checkbox" class="productscategory" name="check" (change)="checkBoxvalue($event.target.checked , category.item_typeID)"><span class="label-text">{{category.item_type}}</span>

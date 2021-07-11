@@ -23,6 +23,7 @@ export class ProductsListComponent implements OnInit
   page : Number = 1
 
   ProductsList : ProductsList_interface[] = [];
+  Search_products_name : productsCategory_interface[] =[]
   public ProductsCategory = [];
 
   
@@ -110,6 +111,7 @@ export class ProductsListComponent implements OnInit
               }
             } 
             // store filtered data into main product list to display on view side
+            this.ProductsList = [];
             this.ProductsList = this.FinalFilteredProducts
           },          
           (err) =>
@@ -141,23 +143,48 @@ export class ProductsListComponent implements OnInit
       }
   }
 
-  public search_products = [];
+
+  keyword = "p_name";
+  selectEvent(item) {
+    // do something with selected item
+  }
+
+  onChangeSearch(val: string) {
+    // fetch remote data from here
+    // And reassign the 'data' which is binded to 'data' property.
+  }
+  
+  onFocused(e){
+    // do something when input is focused
+  }
+
+  
+  public searched_products = [];
+  public resolved_searched_array = []
+  public resolved_searched_arrayy = []
   public doFilter = (value: string) => 
   { 
     if(value === '')
     {
       console.log("empty")
-      this.search_products = [];
+      this.searched_products = [];
+      this.getProducts();
     } 
     else
     {
       this.categoryFilterService.getSearchedProducts(value).subscribe(
           (res) => 
               {
-                // console.log(res[0].p_name)
-                this.search_products.push( 
-                  res.filter((v,i)=>{console.log(v.p_name)}))
-                  console.log(this.search_products)
+                this.Search_products_name = res;
+                // console.log(this.Search_products_name)                            
+                for(let i = 0; i < this.Search_products_name.length; i++)
+                {
+                  this.searched_products.push(this.Search_products_name[i].p_name)
+                  console.log(this.searched_products)
+                  // this.ProductsList = this.searched_products
+                  // console.log(this.ProductsList)
+                } 
+                this.searched_products = []
               }
           )
     }
