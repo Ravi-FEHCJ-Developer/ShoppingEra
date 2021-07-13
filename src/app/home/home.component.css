@@ -32,7 +32,7 @@ h2,h1,p,span
 /* header */
 header 
 {
-  padding: 6%;
+  padding: 6% 6% 3% 6%;
 	background: url('http://www.autodatz.com/wp-content/uploads/2017/05/Old-Car-Wallpapers-Hd-36-with-Old-Car-Wallpapers-Hd.jpg');
 	text-align: center;
 	width: 100%;
@@ -111,7 +111,7 @@ button:hover{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 50px 20px 20px 20px;
+  margin: 0px 20px 20px 20px;
 }
 
 
@@ -237,11 +237,11 @@ figure.snip1104.hover:before {
 
 
 /* third section */
-.third-section
+/* .third-section
 {
   padding: 1%;
   background-image: linear-gradient( 135deg, #369A7E 10%, white 100%);
-}
+} */
 .lookbook-gallery
 {
   margin: 100px;
@@ -387,6 +387,20 @@ figure.snip1104.hover:before {
   }
 }
 
+
+/* Fourth - section */
+.fourth-section
+{
+  position: relative; 
+  height: 700px; 
+  width: 100%; 
+  clip-path: polygon(0 0, 0% 100%, 100% 100%); 
+  background-color: #eef4f9;
+}
+.fourth-section div
+{
+  position: absolute; 
+}
 
 /* fifth-section */
 .container-fluid

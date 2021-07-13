@@ -1,7 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Mate+SC&display=swap');
+
+*
+{
+font-family: 'Mate SC', serif;
+}
+
 a
 {
   color: black !important;
 }
+
 .navbar-height
 {
     height: 74px !important;
@@ -10,18 +18,27 @@ a
 
 /* Search Bar */
 
+.search_text
+{
+  text-align: center;
+}
 
+.search_text h1
+{
+  font-family: 'Mate SC', serif;
+}
 
 /deep/ .autocomplete-container .input-container input 
 {
   font-size: 25px !important;
   box-sizing: border-box;
   border: none !important;
-  box-shadow: none !important;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
   outline: none !important;
   background-color: #fff !important;
   color: rgba(0,0,0,.87) !important;
   width: 92vh !important;
+  border-bottom: 4px solid #705df2 !important;
 }
 
 /deep/ .ng-autocomplete
@@ -81,9 +98,15 @@ a
 {
   padding-top: 20px;
   text-align: center;
-  background-color: #e2e9f4;
-  background: linear-gradient(-67deg, rgba(200, 216, 231, 0.7), rgba(255, 255, 255, 0.8));
+  border: 5px solid rgba(200, 216, 231, 0.7);
+  /* background: linear-gradient(-67deg, rgba(200, 216, 231, 0.7), rgba(255, 255, 255, 0.8)); */
   box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.6), 2px 2px 12px #c8d8e7;
+}
+.sidebar h1
+{
+  font-family: 'Mate SC', serif;
+  line-height: 80px;
+  background: linear-gradient(-67deg, rgba(200, 216, 231, 1.0), rgba(255, 255, 255, 0));
 }
 
 .checkboxex
@@ -259,4 +282,5 @@ input[type="checkbox"]:disabled + .label-text:before{
     padding: 2px;
   }
 }
+
 

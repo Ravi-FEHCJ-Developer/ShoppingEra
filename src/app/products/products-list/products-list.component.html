@@ -7,17 +7,9 @@
 <section>
   <div class="row m-5">
     <div class="col-md-12">
-      <!-- <div class="text mb-5">
-        <p>Nachos are</p>
-        <p>
-          <span class="word wisteria">tasty.</span>
-          <span class="word belize">wonderful.</span>
-          <span class="word pomegranate">fancy.</span>
-          <span class="word green">beautiful.</span>
-          <span class="word midnight">cheap.</span>
-        </p>
+      <div class="search_text">
+        <h1>Search Your Health</h1>
       </div>
-       -->
       <div class="ng-autocomplete">
         <ng-autocomplete 
           [data]="searched_products"
@@ -30,7 +22,7 @@
           <li id="search_list" #itemTemplate *ngFor="let item of searched_products" (click)="selected(item.p_id)"  >{{item.p_name}}</li>
         </div> 
 
-   <!-- <div class="Icon">
+  <!-- <div class="Icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#657789" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>                                             
         </div> -->
       </div>
@@ -45,12 +37,12 @@
     
     <!-- sidebar -->
     <div class="col-md-3 sidebar">
-      <h1>SideBar</h1>
+      <h1>Categories</h1>
       <div class="checkboxex">
-      <div class="form-check" *ngFor="let category of ProductsCategory">
-        <label>
-          <input type="checkbox" class="productscategory" name="check" (change)="checkBoxvalue($event.target.checked , category.item_typeID)"><span class="label-text">{{category.item_type}}</span>
-        </label>
+        <div class="form-check" *ngFor="let category of ProductsCategory">
+          <label>
+            <input type="checkbox" class="productscategory" name="check" (change)="checkBoxvalue($event.target.checked , category.item_typeID)"><span class="label-text">{{category.item_type}}</span>
+          </label>
         </div>
       </div>
     </div>

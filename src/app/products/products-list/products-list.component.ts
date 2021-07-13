@@ -44,9 +44,6 @@ export class ProductsListComponent implements OnInit
   {
     this.getCategories();
     this.getProducts();
-    this.search_title_text_array = changeWord((val)=> {return val})
-    // setInterval(changeWord, 3000);
-    console.log(this.search_title_text_array);
   }
 
 
