@@ -9,7 +9,7 @@ import { ProductsList_interface } from 'src/app/interface/productsList_interface
 export class ProductsListService 
 {
 
-  baseUrl = "https://localhost:5001/api/Products";
+  baseUrl = "https://localhost:5001/api/Products/";
 
   constructor(private http : HttpClient) { }
 
@@ -18,9 +18,9 @@ export class ProductsListService
     return this.http.get<ProductsList_interface[]>(this.baseUrl , { responseType : "json"} )
   }
 
-  getDataById()
+  getDataById(p_type : number)
   {
-    return this.http.get<ProductsList_interface>(this.baseUrl , { responseType : "json"} )
+    return this.http.get<ProductsList_interface>(this.baseUrl + p_type, { responseType : "json"} )
   }
 
 }

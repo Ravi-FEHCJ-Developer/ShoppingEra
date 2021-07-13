@@ -1,5 +1,5 @@
-<section class="navbar-height">
-  <h2>Don't Try To Read This Line. If You Want to live alive.</h2>
+<section class="navbar-height border">
+  <h2>Don't Try To Read This Line. If You Want to be alive.</h2>
 </section>
 
 
@@ -7,29 +7,32 @@
 <section>
   <div class="row m-5">
     <div class="col-md-12">
+      <!-- <div class="text mb-5">
+        <p>Nachos are</p>
+        <p>
+          <span class="word wisteria">tasty.</span>
+          <span class="word belize">wonderful.</span>
+          <span class="word pomegranate">fancy.</span>
+          <span class="word green">beautiful.</span>
+          <span class="word midnight">cheap.</span>
+        </p>
+      </div>
+       -->
       <div class="ng-autocomplete">
         <ng-autocomplete 
-        [data]="ProductsList"
-        [searchKeyword]="keyword"
-          (selected)='selectEvent($event)'
-          (inputChanged)='onChangeSearch($event)'
-          (inputFocused)='onFocused($event)'
-          [itemTemplate]="itemTemplate"
-          [notFoundTemplate]="notFoundTemplate"
-          (keyup)="doFilter($event.target.value)">                                 
+          [data]="searched_products"
+          [searchKeyword]="keyword"
+          (inputChanged)='onChangeSearch($event)'     
+          >                                 
         </ng-autocomplete>
-        
-        <ng-template #itemTemplate let-item>
-          <a [innerHTML]="item.name"></a>
-        </ng-template>
-        
-        <ng-template #notFoundTemplate let-notFound>
-          <div [innerHTML]="notFound"></div>
-        </ng-template>
-        
-        <div class="Icon">
+
+        <div [ngClass]="{'is-hidden' : isHidden}">
+          <li id="search_list" #itemTemplate *ngFor="let item of searched_products" (click)="selected(item.p_id)"  >{{item.p_name}}</li>
+        </div> 
+
+   <!-- <div class="Icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#657789" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>                                             
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -44,34 +47,33 @@
     <div class="col-md-3 sidebar">
       <h1>SideBar</h1>
       <div class="checkboxex">
-            <div class="form-check" *ngFor="let category of ProductsCategory">
-              <label>
-                <input type="checkbox" class="productscategory" name="check" (change)="checkBoxvalue($event.target.checked , category.item_typeID)"><span class="label-text">{{category.item_type}}</span>
-              </label>
-            </div>
-          </div>
+      <div class="form-check" *ngFor="let category of ProductsCategory">
+        <label>
+          <input type="checkbox" class="productscategory" name="check" (change)="checkBoxvalue($event.target.checked , category.item_typeID)"><span class="label-text">{{category.item_type}}</span>
+        </label>
         </div>
+      </div>
+    </div>
 
         <!-- products List -->
-        <div class="col-md-9 productsbar m-0 d-flex flex-wrap">
-
-          <div *ngFor="let product of ProductsList | paginate : { id: 'listing_pagination', itemsPerPage: 10, currentPage: page, totalItems: totalRecords }">
-            <div class="wrapper p-3">
-              <div class="card text-center">
-                  <div class="image"> <img src= {{product.p_image}}  width="300"> </div>
-                  <div class="about-product text-center">
-                      <h3> {{product.p_name}} </h3>
-                      <h4>Rs. {{product.p_price}} </h4> <button class="btn btn-success buy-now">Add To Cart</button>
-                  </div>
-              </div>
+    <div class="col-md-9 productsbar m-0 d-flex flex-wrap">
+      <div *ngFor="let product of ProductsList | paginate : { id: 'listing_pagination', itemsPerPage: 10, currentPage: page, totalItems: totalRecords }">
+        <div class="wrapper p-3">
+          <div class="card text-center">
+            <div class="image"> <img src= {{product.p_image}}  width="300"> </div>
+            <div class="about-product text-center">
+                <h3> {{product.p_name}} </h3>
+                <h4>Rs. {{product.p_price}} </h4> <button class="btn btn-success buy-now">Add To Cart</button>
             </div>
           </div>
+        </div>
+      </div>
 
           
-          <div class="text-center w-100">
-            <pagination-controls class="pagination-controls" id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls> 
-        </div>
-        </div>
+      <div class="text-center w-100">
+        <pagination-controls class="pagination-controls" id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls> 
+      </div>
+    </div>
         
   </div>
     

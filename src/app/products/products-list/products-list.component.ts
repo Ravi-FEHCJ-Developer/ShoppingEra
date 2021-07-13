@@ -9,6 +9,7 @@ import { ProductsCategoryService } from 'src/app/services/productsCategory/produ
 import { CategoryFilterService } from '../../services/category_filter/categoryFilter.service';
 
 
+declare const changeWord : any;
 @Component({
   selector: 'app-products-list',
   templateUrl: './products-list.component.html',
@@ -37,10 +38,15 @@ export class ProductsListComponent implements OnInit
     this.data = new Array<any>()
   }
   
+  search_title_text_array = ""
+  
   ngOnInit() 
   {
     this.getCategories();
     this.getProducts();
+    this.search_title_text_array = changeWord((val)=> {return val})
+    // setInterval(changeWord, 3000);
+    console.log(this.search_title_text_array);
   }
 
 
@@ -85,7 +91,7 @@ export class ProductsListComponent implements OnInit
 
 
 
-  // logic to filter the data
+  // Filter Checkbox data logic 
   public FilteredProducts = [];
   public StoreFilteredProducts = [];
   public FinalFilteredProducts = [];
@@ -144,50 +150,70 @@ export class ProductsListComponent implements OnInit
   }
 
 
+
+  // Search Bar Logic
   keyword = "p_name";
-  selectEvent(item) {
-    // do something with selected item
-  }
-
-  onChangeSearch(val: string) {
-    // fetch remote data from here
-    // And reassign the 'data' which is binded to 'data' property.
-  }
-  
-  onFocused(e){
-    // do something when input is focused
-  }
-
-  
+  isHidden : boolean = false;
   public searched_products = [];
   public resolved_searched_array = []
   public resolved_searched_arrayy = []
-  public doFilter = (value: string) => 
-  { 
-    if(value === '')
+  onChangeSearch(val: string) 
+  {
+     if(val === '')
     {
-      console.log("empty")
+      this.isHidden  = false;
       this.searched_products = [];
       this.getProducts();
     } 
     else
     {
-      this.categoryFilterService.getSearchedProducts(value).subscribe(
-          (res) => 
-              {
-                this.Search_products_name = res;
-                // console.log(this.Search_products_name)                            
-                for(let i = 0; i < this.Search_products_name.length; i++)
-                {
-                  this.searched_products.push(this.Search_products_name[i].p_name)
-                  console.log(this.searched_products)
-                  // this.ProductsList = this.searched_products
-                  // console.log(this.ProductsList)
-                } 
-                this.searched_products = []
-              }
-          )
+      this.categoryFilterService.getSearchedProducts(val).subscribe
+      (
+        (res) => 
+        {
+          this.isHidden  = true;
+          this.Search_products_name = res;
+          if(this.Search_products_name.length > 0)
+          {
+            for(let i = 0; i < this.Search_products_name.length; i++)
+            {
+              this.searched_products.push(this.Search_products_name[i])
+            } 
+          }
+          else
+          {
+            alert("No Such Product is available!");
+            this.isHidden  = false;
+            this.searched_products = [];
+          }
+        },
+        (err) => 
+        { 
+          console.log(err) 
+        }
+      )
     }
   }
+
+
+  selected(val: number) 
+  {
+    console.log(val)
+    this.productsListService.getDataById(val).subscribe
+    (
+      (res) => 
+      {
+        this.ProductsList = []
+        this.ProductsList.push(res) 
+        this.isHidden  = false;
+        this.searched_products = [];
+      },
+      (err) => 
+      { 
+        console.log(err) 
+      }
+    )
+  }
+
 
 }
