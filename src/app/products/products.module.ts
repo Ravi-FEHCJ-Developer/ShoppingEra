@@ -5,11 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ProductsRoutingModule  } from './products-routing.module';
 import { ProductsListComponent } from './products-list/products-list.component'; 
-import { AutocompleteLibModule } from 'angular-ng-autocomplete';
-// import { MatFormFieldModule } from '@angular/material/form-field';
-// import { MatInputModule } from '@angular/material/input';
-// import { FlexLayoutModule } from '@angular/flex-layout';
-
+import { MatInputModule } from '@angular/material/input';
+import { MatAutocompleteModule } from '@angular/material/autocomplete'
 
 @NgModule({
   declarations: 
@@ -22,10 +19,8 @@ import { AutocompleteLibModule } from 'angular-ng-autocomplete';
     HttpClientModule,
     NgxPaginationModule,
     ProductsRoutingModule,
-    AutocompleteLibModule
-//     MatFormFieldModule,
-// MatInputModule,
-// FlexLayoutModule 
+    MatInputModule,
+    MatAutocompleteModule 
   ]
 })
 export class ProductsModule { }

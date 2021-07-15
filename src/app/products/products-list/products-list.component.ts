@@ -38,7 +38,7 @@ export class ProductsListComponent implements OnInit
     this.data = new Array<any>()
   }
   
-  search_title_text_array = ""
+  items = ["red","ornge"]
   
   ngOnInit() 
   {
@@ -154,8 +154,10 @@ export class ProductsListComponent implements OnInit
   public searched_products = [];
   public resolved_searched_array = []
   public resolved_searched_arrayy = []
-  onChangeSearch(val: string) 
+  onChangeSearch(val: any) 
   {
+    this.searched_products = [];
+    console.log(val)
      if(val === '')
     {
       this.isHidden  = false;
