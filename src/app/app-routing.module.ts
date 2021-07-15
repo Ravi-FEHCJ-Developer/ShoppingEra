@@ -12,6 +12,7 @@ import { LoginSignUpComponent } from './LoginSignUp/LoginSignUp.component';
 
 const routes: Routes = 
 [
+  { path: 'home', component: HomeComponent },
   { path: '', component: HomeComponent },
   { path: 'aboutUs', component: AboutusComponent },
   { path: 'login', component: LoginSignUpComponent },

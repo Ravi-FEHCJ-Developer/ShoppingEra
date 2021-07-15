@@ -88,9 +88,7 @@ export class ProductsListComponent implements OnInit
 
 
 
-  // Filter Checkbox data logic 
-  public FilteredProducts = [];
-  public StoreFilteredProducts = [];
+  // Filter Checkbox data logic
   public FinalFilteredProducts = [];
   checkBoxvalue(isChecked: boolean , selecteditem_typeID: any)
   {
@@ -100,22 +98,27 @@ export class ProductsListComponent implements OnInit
         (
           (res) =>
           {
-            this.FilteredProducts.push(res);                             
-            for(let i = 0; i < this.FilteredProducts.length; i++)
+            // Declare empty object
+            let uniqueObject = {};
+              
+            // extract objects/elements from array 
+            for (let i in res) 
             {
-              var farray = this.FilteredProducts[i];
-              // convert subarray into array
-              for(let j = 0; j < farray.length; j++)
-              {
-                var obj = farray[j];
-                this.StoreFilteredProducts.push(obj);
-                // remove duplicate objects
-                this.FinalFilteredProducts = this.StoreFilteredProducts.filter(( value, index ) => this.StoreFilteredProducts.indexOf( value ) === index)
-              }
-            } 
-            // store filtered data into main product list to display on view side
-            this.ProductsList = [];
-            this.ProductsList = this.FinalFilteredProducts
+                // Extract the title
+                var objTitle = res[i]['p_name'];
+      
+                // Use the title as the index
+                uniqueObject[objTitle] = res[i];
+            }
+
+            // push unique object into array
+            for (let i in uniqueObject) 
+            {
+              this.FinalFilteredProducts.push(uniqueObject[i]);
+            }
+    
+            this.ProductsList = []
+            this.ProductsList  =  this.FinalFilteredProducts
           },          
           (err) =>
           {
@@ -125,15 +128,15 @@ export class ProductsListComponent implements OnInit
       } 
       else
       {
-        for(let i = 0; i<this.FinalFilteredProducts.length; i++)
+        for(let i = 0; i<this.ProductsList.length; i++)
         {
-          if ( this.FinalFilteredProducts[i].p_type == selecteditem_typeID) 
+          if ( this.ProductsList[i].p_type == selecteditem_typeID) 
           {
             // count number of indexex having an array with same key
-            const count = this.FinalFilteredProducts.filter((obj) => obj.p_type === selecteditem_typeID).length;
+            const count = this.ProductsList.filter((obj) => obj.p_type === selecteditem_typeID).length;
             // give an index of an element of array
-            var index = this.FinalFilteredProducts.indexOf(this.FinalFilteredProducts[i]); 
-            this.FinalFilteredProducts.splice(index , count);
+            var index = this.ProductsList.indexOf(this.ProductsList[i]); 
+            this.ProductsList.splice(index , count);
           }
         }
 
@@ -141,6 +144,8 @@ export class ProductsListComponent implements OnInit
         var checked = document.querySelectorAll('input:checked');
         if (checked.length === 0) 
         {
+          this.FinalFilteredProducts = []
+          this.ProductsList = []
           this.getProducts();
         }
       }
@@ -149,18 +154,12 @@ export class ProductsListComponent implements OnInit
 
 
   // Search Bar Logic
-  keyword = "p_name";
-  isHidden : boolean = false;
   public searched_products = [];
-  public resolved_searched_array = []
-  public resolved_searched_arrayy = []
   onChangeSearch(val: any) 
   {
     this.searched_products = [];
-    console.log(val)
      if(val === '')
     {
-      this.isHidden  = false;
       this.searched_products = [];
       this.getProducts();
     } 
@@ -170,7 +169,6 @@ export class ProductsListComponent implements OnInit
       (
         (res) => 
         {
-          this.isHidden  = true;
           this.Search_products_name = res;
           if(this.Search_products_name.length > 0)
           {
@@ -182,7 +180,6 @@ export class ProductsListComponent implements OnInit
           else
           {
             alert("No Such Product is available!");
-            this.isHidden  = false;
             this.searched_products = [];
           }
         },
@@ -204,7 +201,6 @@ export class ProductsListComponent implements OnInit
       {
         this.ProductsList = []
         this.ProductsList.push(res) 
-        this.isHidden  = false;
         this.searched_products = [];
       },
       (err) => 

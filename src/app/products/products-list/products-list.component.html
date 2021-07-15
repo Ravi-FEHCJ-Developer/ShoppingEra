@@ -22,9 +22,6 @@
           </mat-option>
         </mat-autocomplete>
       </mat-form-field>
-      <!-- <div class="Icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#657789" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>                                             
-      </div> -->
     </div>
   </div>
 </section>
@@ -37,16 +34,11 @@
     <!-- sidebar -->
     <div class="col-md-3 sidebar">
       <h1>Categories</h1>
-      <ul class="ks-cboxtags" *ngFor="let category of ProductsCategory">
-        <li><input type="checkbox" id="checkboxOne"  name="check" class="productscategory" (change)="checkBoxvalue($event.target.checked , category.item_typeID)" [value]="category.item_typeID"><label for="checkboxOne">{{ category }}</label></li>
-      </ul>
-      <div class="checkboxex">
-        <div class="form-check" *ngFor="let category of ProductsCategory">
-          <label>
-            <input type="checkbox" class="productscategory" name="check" (change)="checkBoxvalue($event.target.checked , category.item_typeID)"><span class="label-text">{{category.item_type}}</span>
-          </label>
-        </div>
-      </div>
+      <div class="checkboxex_position">
+        <ul class="ks-cboxtags" *ngFor="let category of ProductsCategory">
+          <li><input type="checkbox" [id]="category.item_typeID"  name="check" class="productscategory" (change)="checkBoxvalue($event.target.checked , category.item_typeID)" [value]="category.item_typeID"><label [for]="category.item_typeID">{{ category.item_type }}</label></li>
+        </ul>
+      </div>    
     </div>
 
         <!-- products List -->

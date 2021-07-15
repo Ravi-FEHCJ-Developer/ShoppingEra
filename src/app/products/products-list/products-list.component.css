@@ -2,13 +2,9 @@
 
 *
 {
-font-family: 'Mate SC', serif;
+  font-family: 'Mate SC', serif;
 }
 
-a
-{
-  color: black !important;
-}
 
 .navbar-height
 {
@@ -16,8 +12,9 @@ a
     background-color: white;
 }
 
-/* Search Bar */
 
+
+/* Search Bar */
 .search_text
 {
   text-align: center;
@@ -60,37 +57,52 @@ a
   height: 4px !important;
 }
 
-/* .Icon 
+
+
+/* sidebar */
+.sidebar
 {
-  min-width: 46px;
-  min-height: 46px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--border-radius);
-  margin-right: 12px;
+  padding-top: 20px;
+  text-align: center;
+  border: 5px solid rgba(200, 216, 231, 0.7);
   box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.6), 2px 2px 12px #c8d8e7;
 }
-.Icon svg {
-  transform: translate(-1px, -1px);
-} */
+.sidebar h1
+{
+  font-family: 'Mate SC', serif;
+  line-height: 80px;
+  background: linear-gradient(-67deg, rgba(200, 216, 231, 1.0), rgba(255, 255, 255, 0));
+}
+
+.checkboxex_position
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
 
 
-/* filter page*/
-
-
-
-ul.ks-cboxtags {
+/* sidebar filter */
+ul.ks-cboxtags 
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   list-style: none;
   padding: 20px;
 }
-ul.ks-cboxtags li{
-display: inline;
+
+ul.ks-cboxtags li
+{
+  display: inline;
 }
-ul.ks-cboxtags li label{
+
+ul.ks-cboxtags li label
+{
   display: inline-block;
   background-color: rgba(255, 255, 255, .9);
-  border: 2px solid rgba(139, 139, 139, .3);
+  border: 2px solid #705df2;
   color: #adadad;
   border-radius: 25px;
   white-space: nowrap;
@@ -102,12 +114,10 @@ ul.ks-cboxtags li label{
   user-select: none;
   -webkit-tap-highlight-color: transparent;
   transition: all .2s;
-}
-
-ul.ks-cboxtags li label {
   padding: 8px 12px;
   cursor: pointer;
 }
+
 
 ul.ks-cboxtags li label::before {
   display: inline-block;
@@ -123,108 +133,42 @@ ul.ks-cboxtags li label::before {
   transition: transform .3s ease-in-out;
 }
 
-ul.ks-cboxtags li input[type="checkbox"]:checked + label::before {
+ul.ks-cboxtags li input[type="checkbox"]:checked + label::before 
+{
   content: "\f00c";
   transform: rotate(-360deg);
   transition: transform .3s ease-in-out;
 }
 
-ul.ks-cboxtags li input[type="checkbox"]:checked + label {
-  border: 2px solid #1bdbf8;
-  background-color: #12bbd4;
+ul.ks-cboxtags li input[type="checkbox"]:checked + label 
+{
+  box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.6), 2px 2px 12px #c8d8e7;
+  background-color: #705df2;
   color: #fff;
   transition: all .2s;
 }
 
-ul.ks-cboxtags li input[type="checkbox"] {
-display: absolute;
-}
-ul.ks-cboxtags li input[type="checkbox"] {
-position: absolute;
-opacity: 0;
-}
-ul.ks-cboxtags li input[type="checkbox"]:focus + label {
-border: 2px solid #e9a1ff;
-}
-
-
-.sidebar
+ul.ks-cboxtags li input[type="checkbox"] 
 {
-  padding-top: 20px;
-  text-align: center;
-  border: 5px solid rgba(200, 216, 231, 0.7);
-  /* background: linear-gradient(-67deg, rgba(200, 216, 231, 0.7), rgba(255, 255, 255, 0.8)); */
-  box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.6), 2px 2px 12px #c8d8e7;
+  display: absolute;
 }
-.sidebar h1
+
+ul.ks-cboxtags li input[type="checkbox"] 
 {
-  font-family: 'Mate SC', serif;
-  line-height: 80px;
-  background: linear-gradient(-67deg, rgba(200, 216, 231, 1.0), rgba(255, 255, 255, 0));
+  position: absolute;
+  opacity: 0;
 }
 
-.checkboxex
+ul.ks-cboxtags li input[type="checkbox"]:focus + label 
 {
-  text-align: left;
-  padding: 5px 0px 0px 30px;
-}
-
-label{
-	position: relative;
-	cursor: pointer;
-	color: #666;
-	font-size: 18px;
-}
-
-input[type="checkbox"], input[type="radio"]{
-	position: absolute;
-	right: 9000px;
-}
-
-/*Check box*/
-input[type="checkbox"] + .label-text:before{
-	content: "\f096";
-	font-family: "FontAwesome";
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing:antialiased;
-	width: 1em;
-	display: inline-block;
-	margin-right: 5px;
-}
-
-input[type="checkbox"]:checked + .label-text:before{
-	content: "\f14a";
-	color: #2980b9;
-	animation: effect 250ms ease-in;
-}
-
-input[type="checkbox"]:disabled + .label-text{
-	color: #aaa;
-}
-
-input[type="checkbox"]:disabled + .label-text:before{
-	content: "\f0c8";
-	color: #ccc;
+  border: 2px solid #e9a1ff;
 }
 
 
-@media (max-width: 1000px) 
-{
-  .checkboxex
-  {
-    padding: 5px 0px 0px 5px;
-  } 
-}
+
 
 
 /* single product detail */
-
-
 .wrapper {
   width: 100%;
   padding: 16px;
