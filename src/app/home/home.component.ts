@@ -19,6 +19,9 @@ export class HomeComponent implements OnInit {
           $(this).removeClass("hover");
         }
       );
+
+
+      
   }
 
 }
