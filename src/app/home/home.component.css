@@ -1,16 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Mate+SC&display=swap');
 
-@media (max-width: 1020px)
-{
-  .mat-h1, .mat-headline, .mat-typography h1 
-  {
-    font: 400 24px/66px Roboto, "Helvetica Neue", sans-serif !important;
-  }
-}
 
-h2,h1,p,span
+h1,h3,p,span
 {
+
   font-family: 'Mate SC', serif;
+
 }
 
 /* header */
@@ -77,18 +72,27 @@ header .overlay
 }
 
 
-h3, p {
-  
-	margin-bottom: 30px;
-  color: #101d2c;
+@media (max-width: 1020px)
+{
+  .mat-h1, .mat-headline, .mat-typography h1 
+  {
+    font: 400 24px/66px Roboto, "Helvetica Neue", sans-serif !important;
+  }
+
+  .mat-h4, .mat-subheading-1, .mat-typography h4 
+  {
+    margin: 0px !important;
+  }
 }
 
-.card-text, .card-title, .model-hed a{
-	
-  color: #101d2c;
+
+.card-text
+{
+  font: 400 15px/24px Roboto, "Helvetica Neue", sans-serif;
 }
 
-button {
+button 
+{
 	border: none;
 	outline: none;
 	padding: 10px 20px;
@@ -104,15 +108,15 @@ button:hover{
 
 
 /* parallex-section-one */
-.parallex-section-one
+/* .parallex-section-one
 {
-  background-image: url(../../assets/images/home/parallex1.jpg);
+  background-image: url(../../assets/images/home/paralex1.jpg);
   height: 300px;
   width: 100%;
   background-attachment: fixed;
   margin: 80px 0 0 0;
   opacity: 0.7;
-}
+} */
 
 
 /* secondsection */
@@ -123,6 +127,10 @@ button:hover{
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  background-image: url(../../assets/images/home/paralex.jpg);
+  height: 600px;
+  width: 100%;
+  background-attachment: fixed;
 }
 
 @media (max-width: 724px)
@@ -300,6 +308,31 @@ figure.snip1104.hover:before {
   background-color: #eef4f9;
 }
 
+
+.card-price-card
+{
+  flex-wrap: wrap;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+@media (max-width: 460px) and (min-width: 320px) 
+{
+  .font-weight-bold
+  {
+    font-size: 2rem !important;
+  }
+}
+
+@media (max-width: 320px) 
+{
+  .font-weight-bold
+  {
+    font-size: 1.5rem !important;
+  }
+}
+
 /* media queries */
 @media(min-width: 0px)
 {
@@ -337,13 +370,141 @@ figure.snip1104.hover:before {
 /* parallex-second */
 .parallex-section-second
 {
-  background-image: url(../../assets/images/home/parallex.jpg);
+  background-image: url(../../assets/images/home/parallex1.jpg);
   height: 300px;
   width: 100%;
   background-attachment: fixed;
-  opacity: 0.7;
+  /* opacity: 0.7; */
 }
 
 
 
+/* sixth-section */
+.sixth-section .row
+{
+  justify-content: center;
+}
 
+.product-img 
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  width: 50%;
+}
+
+.product-img img 
+{
+  width: 100%;
+  padding: 3%;
+  border-radius: 7px 0 0 7px;
+}
+
+.product-info 
+{
+  box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  height: inherit;
+  /* width: 50%; */
+  border-radius: 0 7px 10px 7px;
+  background-color: #eef4f9;
+}
+
+@media (max-width: 700px)
+{
+  .product-text 
+  {
+    padding: 20% 0% 25% 0px;
+  }  
+}
+.product-text 
+{
+  padding: 25% 0% 25% 0px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-text h1 
+{
+  margin: 0 0 0 38px;
+  padding-top: 52px;
+  font-size: 34px;
+  color: #474747;
+}
+
+.product-text h1,
+.product-price-btn p {
+  font-family: 'Bentham', serif;
+}
+
+.product-text h2 {
+  margin: 0 0 47px 38px;
+  font-size: 13px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #d2d2d2;
+  letter-spacing: 0.2em;
+}
+
+.product-text p {
+  height: 125px;
+  margin: 0 0 0 38px;
+  font-family: 'Playfair Display', serif;
+  color: #8d8d8d;
+  line-height: 1.7em;
+  font-size: 15px;
+  font-weight: lighter;
+  overflow: hidden;
+}
+
+.product-price-btn {
+  height: 103px;
+  width: 327px;
+  margin-top: 17px;
+  position: relative;
+}
+
+.product-price-btn p {
+  display: inline-block;
+  position: absolute;
+  top: -13px;
+  height: 50px;
+  font-family: 'Trocchi', serif;
+  margin: 0 0 0 38px;
+  font-size: 28px;
+  font-weight: lighter;
+  color: #474747;
+}
+
+
+
+.product-price-btn button {
+  float: right;
+  display: inline-block;
+  height: 50px;
+  width: 176px;
+  margin: 0 40px 0 16px;
+  box-sizing: border-box;
+  border: transparent;
+  border-radius: 60px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+  background-color: #9cebd5;
+  cursor: pointer;
+  outline: none;
+}
+
+.product-price-btn button:hover {
+  background-color: #79b0a1;
+}

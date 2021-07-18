@@ -1,9 +1,47 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext');
 /* #Navigation
 ================================================== */
-.active
+
+
+.main-logo 
 {
-	margin: 5px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-logo .logo 
+{
+  display: inline-block;
+  width: 40px;
+  height: 0px;
+  margin-right: 10px;
+}
+.main-logo .logo > img 
+{
+  box-shadow: 0 10px 30px 0 rgba(138, 155, 165, 0.15);
+  color: white;
+  display: block;
+  width: 100%;
+  min-width: 150px;
+}
+.logo-info 
+{
+  text-align: left;
+  line-height: 20px;
+}
+.text 
+{
+  font-size: 19px;
+  line-height: 20px;
+  color: rgb(0, 0, 0);
+  letter-spacing: .20em;
+  font-weight: 600;
+}
+
+
+.active a
+{
 	color: #705df2;
 }
 

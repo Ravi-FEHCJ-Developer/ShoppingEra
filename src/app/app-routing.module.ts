@@ -16,6 +16,7 @@ const routes: Routes =
   { path: '', component: HomeComponent },
   { path: 'aboutUs', component: AboutusComponent },
   { path: 'login', component: LoginSignUpComponent },
+  { path: 'blogs', component: BlogsComponent },
   { path: 'products', loadChildren: () => import('./products/products.module').then(mod=>mod.ProductsModule)}
 ];
 
