@@ -23,6 +23,7 @@
     "@angular/platform-browser": "~11.1.0",
     "@angular/platform-browser-dynamic": "~11.1.0",
     "@angular/router": "~11.1.0",
+    "@ng-bootstrap/ng-bootstrap": "^8.0.4",
     "bja-ngx-pagination": "^0.2.2",
     "jquery": "^3.6.0",
     "ng5-slider": "^1.2.6",

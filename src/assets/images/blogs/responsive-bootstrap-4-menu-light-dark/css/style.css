@@ -1,6 +1,39 @@
+
+
+/* Please ❤ this if you like it! */
+
+
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext');
 
+/* #Primary
+================================================== */
 
+body{
+    font-family: 'Poppins', sans-serif;
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 400;
+	color: #212112;
+	background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg');
+	background-position: center;
+	background-repeat: repeat;
+	background-size: 7%;
+	background-color: #fff;
+	overflow-x: hidden;
+    transition: all 200ms linear;
+}
+::selection {
+	color: #fff;
+	background-color: #8167a9;
+}
+::-moz-selection {
+	color: #fff;
+	background-color: #8167a9;
+}
+
+
+/* #Navigation
+================================================== */
 
 .start-header {
 	opacity: 1;
@@ -40,16 +73,6 @@
 	-webkit-transition : all 0.3s ease-out;
 	transition : all 0.3s ease-out;
 }
-
- 
-@import url('https://fonts.googleapis.com/css2?family=Fuggles&display=swap');
-.navbar-brand
-{
-	color: rgb(0 102 34);
-	font-family: 'Fuggles', cursive;
-}
-
-
 .navbar-toggler {
 	float: right;
 	border: none;

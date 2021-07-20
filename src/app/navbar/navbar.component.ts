@@ -7,6 +7,7 @@ import * as $ from 'jquery';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  isCollapsed: false;
 
   constructor() { }
 
@@ -43,6 +44,7 @@ export class NavbarComponent implements OnInit {
           },1);
         }
     });	
+
 
     //Switch light/dark
     // $("#switch").on('click', function () {
