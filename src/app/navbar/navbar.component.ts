@@ -1,18 +1,45 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
 import * as $ from 'jquery';
+import { AuthService } from '../services/Auth/auth.service';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
-  isCollapsed: false;
+export class NavbarComponent implements OnInit 
+{
 
-  constructor() { }
+  IsShow : boolean = false;
+
+  constructor(public authService : AuthService, public route : Router) 
+  { 
+    // console.log(this.authService.decodedToken?.nameid);
+    // this.loggedIn();
+  }
+
+  
+
+  loggedIn()
+  {
+    this.IsShow = !this.IsShow;
+    this.authService.loggedIn();
+  }
+  
+
+  logout()
+  {
+    this.IsShow = !this.IsShow;
+    localStorage.removeItem('token');
+    console.log("logged Out Successfully");
+    this.route.navigate(['/', 'home']);
+  }
+
 
   ngOnInit() 
   {
+    
     (function($) { "use strict";
     
     //scroll Animation

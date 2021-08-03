@@ -38,7 +38,7 @@ export class ProductsListComponent implements OnInit
     this.data = new Array<any>()
   }
   
-  items = ["red","ornge"]
+  // items = ["red","ornge"]
   
   ngOnInit() 
   {

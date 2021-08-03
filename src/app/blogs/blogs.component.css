@@ -54,7 +54,7 @@ section
 }
 
 
-.main-news-text  span
+.main-news-text .text span
 {
     color: rgb(209, 203, 203);
 }
@@ -63,103 +63,114 @@ section
 
 
 /* read more button */
-.read-more a
+.read_more_btn 
 {
-    position: relative;
-    display: inline-block;
-    padding: 10px 20px;
-    color: #03e9f4;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: 0.5s;
-    letter-spacing: 4px;
-    overflow: hidden;
-    margin-right: 50px;
-   
+    background: rgb(0,172,238);
+    background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
+    width: 130px;
+    height: 40px;
+    line-height: 42px;
+    padding: 0;
+    border: none;    
 }
-.read-more a:hover{
-    background: #03e9f4;
+
+.read_more_btn span 
+{
     color: white;
-     
-}
-
-
-.read-more a span{
-    position: absolute;
+    position: relative;
     display: block;
+    width: 100%;
+    height: 100%;
 }
-.read-more a span:nth-child(1){
+
+.read_more_btn:before,
+.read_more_btn:after 
+{
+    position: absolute;
+    content: "";
+    right: 0;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg,transparent,#03e9f4);
-    animation: animate1 1s linear infinite;
+    background: rgba(2,126,251,1);
+    transition: all 0.3s ease;
 }
-@keyframes animate1{
-    0%{
-        left: -100%;
-    }
-    50%,100%{
-        left: 100%;
-    }
-}
-.read-more a span:nth-child(2){
-    top: -100%;
-    right: 0;
+
+.read_more_btn:before 
+{
+    height: 0%;
     width: 2px;
+}
+
+.read_more_btn:after 
+{
+  width: 0%;
+  height: 2px;
+}
+  
+.read_more_btn:hover
+{
+  background: transparent;
+  box-shadow: none;
+}
+
+.read_more_btn span:hover:before 
+{
+  height: 100%;
+}
+  
+.read_more_btn span:hover:after 
+{
+  width: 100%;
+}
+
+/* .read_more_btn:hover:before 
+{
     height: 100%;
-    background: linear-gradient(180deg,transparent,#03e9f4);
-    animation: animate2 1s linear infinite;
-    animation-delay: 0.25s;
+} */
+
+/* 
+.read_more_btn:hover:after 
+{
+  width: 100%;
 }
-@keyframes animate2{
-    0%{
-        top: -100%;
-    }
-    50%,100%{
-        top: 100%;
-    }
+ */
+.read_more_btn span:hover
+{
+    color: rgba(2,126,251,1);
 }
-.read-more a span:nth-child(3){
+
+.read_more_btn span:before,
+.read_more_btn span:after 
+{
+    position: absolute;
+    content: "";
+    left: 0;
     bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(270deg,transparent,#03e9f4);
-    animation: animate3 1s linear infinite;
-    animation-delay: 0.50s;
+     background: rgba(2,126,251,1);
+    transition: all 0.3s ease;
 }
-@keyframes animate3{
-    0%{
-        right: -100%;
-    }
-    50%,100%{
-        right: 100%;
-    }
-}
-
-
-.read-more a span:nth-child(4){
-    bottom: -100%;
-    left: 0;
+  
+.read_more_btn span:before 
+{
     width: 2px;
-    height: 100%;
-    background: linear-gradient(360deg,transparent,#03e9f4);
-    animation: animate4 1s linear infinite;
-    animation-delay: 0.75s;
+    height: 0%;
 }
-@keyframes animate4{
-    0%{
-        bottom: -100%;
-    }
-    50%,100%{
-        bottom: 100%;
-    }
+  
+.read_more_btn span:after 
+{
+  width: 0%;
+  height: 2px;
 }
-
-
-
+  
+.read_more_btn span:hover:before 
+{
+  height: 100%;
+}
+  
+.read_more_btn span:hover:after 
+{
+  width: 100%;
+}
+  
 
 
 /* social-media button  */
@@ -313,8 +324,8 @@ section
 
 .parallex
 {
-    background-image: url(../../assets/images/blogs/main-img.jpg);
-    height: 500px;
+    background-image: url(../../assets/images/blogs/main-imgg.jpg);
+    height: 550px;
     width: 100%;
     background-attachment: fixed;
     background-position: center center;

@@ -1,18 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Mate+SC&display=swap');
 
 
+
 h1,h3,p,span
 {
-
+  
   font-family: 'Mate SC', serif;
 
 }
+
+
 
 /* header */
 header 
 {
   padding: 6% 6% 3% 6%;
-	background: url('http://www.autodatz.com/wp-content/uploads/2017/05/Old-Car-Wallpapers-Hd-36-with-Old-Car-Wallpapers-Hd.jpg');
 	text-align: center;
 	width: 100%;
 	height: auto;
@@ -30,41 +32,84 @@ header .overlay
   background-image: linear-gradient( 135deg, #369A7E 10%, white 100%);
 }
 
+svg 
+{
+  font-size: calc(30px + (80-30) * ((100vw - 320px)/1080));
+}
+
+.text-copy {
+  fill: none;
+  stroke: white;
+  stroke-dasharray: 6% 29%;
+  stroke-width: 5px;
+  stroke-dashoffset: 0%;
+  animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1){
+stroke: #077b8a;
+animation-delay: -1;
+}
+
+.text-copy:nth-child(2){
+stroke: #a2d5c6;
+animation-delay: -2s;
+}
+
+.text-copy:nth-child(3){
+stroke: #12a4d9;
+animation-delay: -3s;
+}
+
+.text-copy:nth-child(4){
+stroke: #6b7b8c;
+animation-delay: -4s;
+}
+
+.text-copy:nth-child(5){
+stroke: #f5f0e1;
+animation-delay: -5s;
+}
+
+@keyframes stroke-offset{
+100% {stroke-dashoffset: -35%;}
+}
+
+
+
+.punctuation1
+{
+  height: 20px;
+  -ms-transform: rotate(-175deg); 
+  transform: rotate(-175deg);
+}
+
+.punctuation2
+{
+  padding-left: 10px;
+  height: 20px;
+  -ms-transform: rotate(0deg); 
+  transform: rotate(0deg);
+}
+
 .overlay p
 {
+  color: #ffe2e200;
   text-align: justify;
-  font-size: 25px;
+  font-size: calc(8px + (22-8) * ((100vw - 320px)/1080));
 }
 
 .overlay h3
 {
+  color: #ffe2e200;
   text-align: center; 
+  font-size: calc(8px + (22-8) * ((100vw - 320px)/1080));
   padding-top: 2%;
 }
 
-.overlay h1 
-{ 
-  text-align: center;
-  font-size: 80px;
-  margin-bottom: 30px;
-  color: #101d2c;
-}
-
-@media (max-width: 890px)
-{
-  .overlay h1
-  {
-    font-size: 60px !important; 
-  }
-}
 
 @media (max-width: 728px)
 {
-  .overlay h1
-  {
-    font-size: 40px !important; 
-  }
-
   header .overlay
   {
     padding: 100px 30px 30px 30px;
@@ -74,11 +119,6 @@ header .overlay
 
 @media (max-width: 1020px)
 {
-  .mat-h1, .mat-headline, .mat-typography h1 
-  {
-    font: 400 24px/66px Roboto, "Helvetica Neue", sans-serif !important;
-  }
-
   .mat-h4, .mat-subheading-1, .mat-typography h4 
   {
     margin: 0px !important;
@@ -102,7 +142,9 @@ button
 	margin-bottom: 50px;
 	box-shadow: 0 3px 20px 0 #0000003b;
 }
-button:hover{
+
+button:hover
+{
 	cursor: pointer;
 }
 
@@ -128,7 +170,7 @@ button:hover{
   align-items: center;
   flex-wrap: wrap;
   background-image: url(../../assets/images/home/paralex.jpg);
-  height: 600px;
+  height: 100%;
   width: 100%;
   background-attachment: fixed;
 }
@@ -147,6 +189,15 @@ button:hover{
     left: 27px;
     right: 270px;
   }
+}
+
+@media (max-width: 540px)
+{
+  .secondsection
+  {
+    height: 1000px;
+  }
+
 }
 
 
@@ -343,6 +394,17 @@ figure.snip1104.hover:before {
 }
 
 
+/* hr tag */
+hr
+{
+  /* box-shadow: 14px 21px 35px rgba(43, 42, 43, 0.12); */
+  border: none;
+  outline: none;
+  background-image: linear-gradient( 50deg, #369A7E 10%, white 100%); 
+  height: 100px; 
+  clip-path: polygon(0 0, 0 0, 0 0, 100% 0, 100% 0, 100% 0, 100% 9%, 70% 9%, 18% 9%, 24% 38%, 0% 9%, 0 9%)
+}
+
 /* Fourth - section */
 .fourth-section
 {
@@ -360,7 +422,7 @@ figure.snip1104.hover:before {
 /* fifth-section */
 .container-fluid
 {
-  margin-top: 10%;
+  margin-top: 5%;
   padding: 0.5%;
   /* background-image: linear-gradient( 135deg, #369A7E 10%, white 100%); */
 }
@@ -374,6 +436,7 @@ figure.snip1104.hover:before {
   height: 300px;
   width: 100%;
   background-attachment: fixed;
+  margin-top: 10%;
   /* opacity: 0.7; */
 }
 
@@ -383,6 +446,7 @@ figure.snip1104.hover:before {
 .sixth-section .row
 {
   justify-content: center;
+  padding: 8%;
 }
 
 .product-img 
@@ -507,3 +571,9 @@ figure.snip1104.hover:before {
 .product-price-btn button:hover {
   background-color: #79b0a1;
 }
+
+
+
+
+
+/*  */
