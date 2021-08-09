@@ -42,6 +42,15 @@ export class ProductsListComponent implements OnInit
   
   ngOnInit() 
   {
+    // $('.buy').click(function(){
+    //   $('.bottom').addClass("clicked");
+    // });
+    
+    // $('.remove').click(function(){
+    //   $('.bottom').removeClass("clicked");
+    // });
+
+
     this.getCategories();
     this.getProducts();
   }

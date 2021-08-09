@@ -276,13 +276,13 @@ select option {
 /* 3 */
 .btn-3 {
   background: rgb(0,172,238);
-background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
+  background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
   width: 130px;
   height: 40px;
   line-height: 42px;
   padding: 0;
   border: none;
-  
+  text-align: center;
 }
 .btn-3 span {
   position: relative;

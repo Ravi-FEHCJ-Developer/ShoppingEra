@@ -1,0 +1,164 @@
+<section>
+  <div class="container">
+      <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-5  profile_small_img">
+              <img src="../../assets/images/profile/small_profile.jpg">   
+          </div>
+          <div class="col-md-6 upload_outer">
+            <div class="upload">
+              <div class="upload-files">
+               <header>
+                <p>
+                  <i class="fa fa-upload"></i>
+                 <span class="up p-1">up</span>
+                 <span class="load p-1">load</span>
+                </p>
+               </header>
+               <div class="body" id="drop">
+                <i class="fa fa-file-text pointer-none" aria-hidden="true"></i>
+                <p class="pointer-none"><a href="" id="triggerFile">Browse</a> to begin the upload</p>
+                   <input type="file" multiple="multiple" />
+               </div>
+               <footer>
+                <div class="divider">
+                 <span>FILES</span>
+                </div>
+                <div class="list-files">
+                 <!--   template   -->
+                </div>
+                   <button class="importar">UPDATE FILES</button>
+               </footer>
+              </div>
+            </div>             
+          </div>            
+      </div>
+  </div>
+</section>
+<section class="about">
+  <div class="container">
+      <div class="row">
+          <span class="title">About</span>
+          <hr>
+      </div>
+      <div>
+          <form>
+              <div class="row">
+                <h4>Personal Details</h4>
+                <div class="input-group input-group-icon">
+                  <input type="text" placeholder="Full Name"/>
+                  <div class="input-icon"><i class="fa fa-user"></i></div>
+                </div>
+                <div class="input-group input-group-icon">
+                  <input [disabled] type="email" placeholder="Email Adress"/>
+                  <div class="input-icon"><i class="fa fa-envelope"></i></div>
+                </div>
+                <div class="input-group input-group-icon">
+                  <input type="text" placeholder="Phone Number"/>
+                  <div class="input-icon"><i class="fa fa-phone"></i></div>
+                </div>
+                <div class="input-group input-group-icon">
+                  <input type="password" placeholder="Password"/>
+                  <div class="input-icon"><i class="fa fa-key"></i></div>
+                </div>
+                <div class="input-group input-group-icon">
+                  <input type="password" placeholder="Re-Password"/>
+                  <div class="input-icon"><i class="fa fa-key"></i></div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-half">
+                  <h4>Date of Birth</h4>
+                  <div class="input-group">
+                    <div class="col-third">
+                      <input type="text" placeholder="DD"/>
+                    </div>
+                    <div class="col-third">
+                      <input type="text" placeholder="MM"/>
+                    </div>
+                    <div class="col-third">
+                      <input type="text" placeholder="YYYY"/>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-half">
+                  <h4>Gender</h4>
+                  <div class="input-group">
+                    <input type="radio" name="gender" value="male" id="gender-male"/>
+                    <label for="gender-male">Male</label>
+                    <input type="radio" name="gender" value="female" id="gender-female"/>
+                    <label for="gender-female">Female</label>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="text-right">
+                <button class="custom-btn btn-3"><span>Submit</span></button>
+              </div> -->
+          </form>
+          <form class="Add_Payment_Details">    
+              <div class="row">
+                <h4>Add Payment Details</h4>
+                <!-- <div class="input-group">
+                  <input type="radio" name="payment-method" value="card" id="payment-method-card" checked="true"/>
+                  <label for="payment-method-card"><span><i class="fa fa-cc-visa"></i>Credit Card</span></label>
+                  <input type="radio" name="payment-method" value="paypal" id="payment-method-paypal"/>
+                  <label for="payment-method-paypal"> <span><i class="fa fa-cc-paypal"></i>Paypal</span></label>
+                </div> -->
+                <div class="input-group input-group-icon">
+                  <input type="text" placeholder="Card Holder Name"/>
+                  <div class="input-icon"><i class="fa fa-user"></i></div>
+                </div>
+                <div class="input-group input-group-icon">
+                  <input type="text" placeholder="Card Number"/>
+                  <div class="input-icon"><i class="fa fa-credit-card"></i></div>
+                </div>
+                <div class="col-half">
+                  <div class="input-group input-group-icon">
+                    <input type="text" placeholder="CVV"/>
+                    <div class="input-icon"><img src="../../assets/images/profile/cvv.png" height="20px" width="20px" ></div>
+                  </div>
+                </div>
+                <div class="col-half">
+                  <div class="input-group">
+                    <label  class="col-md-4 d-flex justify-content-center align-items-center" style="color: #999999;">
+                      <span>
+                        <i class="fa fa-cc-paypal"></i>Expiry Date
+                      </span>
+                    </label>
+                    <select class="col-md-4" >
+                      <option>01 Jan</option>
+                      <option>02 Jan</option>
+                    </select>
+                    <select class="col-md-4" >
+                      <option>2010</option>
+                      <option>2011</option>
+                      <option>2012</option>
+                      <option>2013</option>
+                      <option>2014</option>
+                      <option>2015</option>
+                      <option>2016</option>
+                      <option>2017</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="row border">
+                <div class="col-md-12">
+                  <h4>Terms and Conditions</h4>
+                </div>
+                <div class="col-md-12 Terms_and_Conditions">
+                  <input class="Terms_and_Conditions_checkbox" type="checkbox" id="terms" />
+                  <label class="col-md-12 Terms_and_Conditions_text" for="terms" >
+                    I accept the terms and conditions for signing up to this service, and hereby confirm I have read the privacy policy.</label>
+                </div>
+              </div> -->
+              <div class="text-center">
+                <button class="custom-btn btn-3 mr-5"><span>Submit</span></button>
+                <!-- <button class="custom-btn btn-3"><span>Edit Card Details</span></button> -->
+              </div>
+            </form>
+      </div>
+  </div>
+</section>
+
+  

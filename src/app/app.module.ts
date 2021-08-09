@@ -1,5 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 import { CommonModule, } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
@@ -9,8 +10,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 
+
 @NgModule({
-  declarations: [									
+  declarations: [															
     AppComponent,
     routingComponents
    ],
@@ -20,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
