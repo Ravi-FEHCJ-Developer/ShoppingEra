@@ -42,7 +42,7 @@
     </div>
 
         <!-- products List -->
-    <div class="border col-md-9 productsbar m-0">
+    <div class="col-md-9 productsbar m-0">
       <!-- <div *ngFor="let product of ProductsList | paginate : { id: 'listing_pagination', itemsPerPage: 10, currentPage: page, totalItems: totalRecords }">
         <div class="wrapper p-3">
           <div class="card text-center">
@@ -56,31 +56,31 @@
       </div> -->  
       <div *ngFor="let product of ProductsList | paginate : { id: 'listing_pagination', itemsPerPage: 10, currentPage: page, totalItems: totalRecords }">
         <div class="wrapper">
-          <div class="container">
-            <div class="top">
+          <!-- <div class="container"> -->
+            <div class="top border">
               <img src= {{product.p_image}}>
             </div>
-            <!-- <div class="bottom">
-              <div class="left">
+            <div class="bottom border">
+              <div class="left border">
                 <div class="details">
-                  <h1>Chair</h1>
-                  <p>£250</p>
+                  <span><a class="btn btn-primary">Add To Cart</a></span>
+                  <!-- <p>£250</p> -->
                 </div>
-                <div class="buy"><i class="fa fa-shopping-cart fa-spin"></i></div>
+                <!-- <div class="buy"><i class="fa fa-shopping-cart fa-spin"></i></div> -->
               </div>
-              <div class="right">
-                <div class="done"><i class="material-icons">done</i></div>
-                <div class="details">
-                  <h1>Chair</h1>
-                  <p>Added to your cart</p>
-                </div>
-                <div class="remove"><i class="material-icons">clear</i></div>
-              </div>
-            </div> -->
-          </div>
+              <!-- <div class="right"> -->
+                <!-- <div class="done"><i class="material-icons">done</i></div> -->
+                <!-- <div class="details"> -->
+                  <!-- <h1>Chair</h1> -->
+                  <!-- <p>Added to your cart</p> -->
+                <!-- </div> -->
+                <!-- <div class="remove"><i class="material-icons">clear</i></div> -->
+              <!-- </div> -->
+            </div> 
+          <!-- </div> -->
           <div class="inside d-flex justify-content-center align-items-center">
             <div class="icon"><i class="">info</i></div>
-            <div class="contents border w-100">
+            <div class="contents w-100">
               <table>
                 <tr>
                   <th>category</th>
@@ -92,10 +92,10 @@
                 </tr>
                 <tr>
                   <td>Price</td>
-                  <td>Rs.{{product.p_price}}/pcs</td>
+                  <td>Rs.{{product.p_price | currency: 'INR'}}/pcs</td>
                 </tr>
                 <tr>
-                  <td class="text-center border" colspan="2">In stock</td>
+                  <td class="instock border" colspan="2">In stock</td>
                 </tr>
               </table>
             </div>

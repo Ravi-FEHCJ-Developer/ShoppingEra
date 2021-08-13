@@ -41,11 +41,20 @@
 								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
 									<a class="nav-link" routerLink="/login" routerLinkActive="active" >Login/Sign Up</a>
 								</li>
-								<a class="dropdown-item" routerLink="/profile" routerLinkActive="router-link-active" ><i class="fa fa-user">Profile</i> </a>
+								<!-- <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+									<a class="nav-link" routerLink="/cart" routerLinkActive="active" >
+										<i class="fa fa-cart-plus pr-2"><span class="Item_In_cart">{{Item_In_cart}}</span></i>
+									</a>
+								</li> -->
+								<!-- <li class="nav-item  pl-4 pl-md-0 ml-0 ml-md-2">
+									<a class="dropdown-item" routerLink="/profile" routerLinkActive="active" ><i class="fa fa-user pr-2"></i>Profile</a>
+								</li>	 -->
 								<li *ngIf="!IsShow" class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
 									<a class="nav-link dropdown-toggle" data-toggle="dropdown" routerLink="/products/Products" routerLinkActive="active" role="button" aria-haspopup="true" aria-expanded="false">{{authService.decodedToken?.nameid}}</a>
 									<div class="dropdown-menu">
-										<a class="dropdown-item" (click)="logout()" ><i class="fa fa-sign-out">Logout</i></a>
+										<a class="dropdown-item cart" routerLink="/cart" routerLinkActive="active" ><i class="fa fa-cart-plus pr-2"><span class="Item_In_cart">{{Item_In_cart}}</span></i>Items</a>
+										<a class="dropdown-item" routerLink="/profile" routerLinkActive="active" ><i class="fa fa-user pr-2"></i>Profile</a>
+										<a class="dropdown-item" (click)="logout()" ><i class="fas fa-sign-in-alt  pr-2"></i>Logout</a>
 									</div>
 								</li>
 							</ul>
@@ -56,5 +65,3 @@
 		</div>
 	</div>
 </section>	
-  
-<!-- #999999 -->

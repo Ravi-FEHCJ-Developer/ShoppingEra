@@ -10,6 +10,7 @@ import { AuthService } from '../services/Auth/auth.service';
 })
 export class NavbarComponent implements OnInit 
 {
+  Item_In_cart : number = 0;
 
   IsShow : boolean = false;
 
@@ -32,6 +33,7 @@ export class NavbarComponent implements OnInit
   {
     this.IsShow = !this.IsShow;
     localStorage.removeItem('token');
+    localStorage.removeItem('registration_ID');
     console.log("logged Out Successfully");
     this.route.navigate(['/', 'home']);
   }

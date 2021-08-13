@@ -41,7 +41,8 @@
 	transition : all 0.3s ease-out;
 }
 
- 
+
+
 @import url('https://fonts.googleapis.com/css2?family=Fuggles&display=swap');
 .navbar-brand
 {
@@ -512,4 +513,21 @@ body.dark .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     opacity: 0.8;
     border-radius: 50%;
     box-shadow: 0 0 0 20px rgba(12,12,12,.1);
+}
+
+
+.cart
+{
+	display: flex;
+	align-items: center;
+}
+
+.Item_In_cart
+{
+	font-weight: bolder;
+	font-size: 15px;
+	padding: 1px 0px 1px 6px;
+	margin-left: 5px;
+	/* background-color: #8167a9; */
+	color: #8167a9;
 }

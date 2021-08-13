@@ -6,6 +6,8 @@ import { map } from "rxjs/operators";
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { Router } from "@angular/router";
 import { Register_credential } from 'src/app/interface/register_credential';
+import { ToastrService } from "ngx-toastr";
+
 
 @Injectable({
   providedIn: "root",
@@ -15,16 +17,19 @@ export class AuthService {
   user: any;
   jwtHelper = new JwtHelperService();
   decodedToken : any;
-  constructor(
+  
+  constructor
+  (
     private http: HttpClient,
-    private router: Router
-    // private notification: NotificationService
+    private router: Router,
+    // private toastrService: ToastrService
   ) {}
 
   LoginbaseUrl = "https://localhost:5001/api/Auth/Login?";
   // https://localhost:5001/api/Auth/Login?email=rl%40gmail.com&password=hfh
 
   RegisterbaseUrl = "https://localhost:5001/api/Auth";
+
   
   registerData( Data:any )
   {
@@ -46,15 +51,15 @@ export class AuthService {
           if (user) {
             localStorage.setItem("token", user.token);
             this.decodedToken = this.jwtHelper.decodeToken(user.token);
-            console.log(this.decodedToken);
-            // localStorage.setItem("user", JSON.stringify(user.customer_email));
+            console.table(user);
+            localStorage.setItem("registration_ID", JSON.stringify(user.registration_id));
             this.user = JSON.stringify(user);
             console.log("Successfully Logged In");
             this.router.navigate(["/home"]);
-            // this.notification.showNotification(
-            //   "Log In Successful !!",
-            //   "success"
-            // );
+            // this.toastrService.success('Success', 'Major Error', {
+            //   timeOut: 500,
+            //   positionClass: 'toast-bottom-right'
+            // });
           }
         },
         (error) => {

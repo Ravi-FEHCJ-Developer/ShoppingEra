@@ -11,6 +11,11 @@ export class Products_descriptionComponent implements OnInit {
 
   ngOnInit() 
   {
+    $(document).ready(function(){
+      $(".wish-icon i").click(function(){
+        $(this).toggleClass("fa-heart fa-heart-o");
+      });
+    });	
   }
 
 }
