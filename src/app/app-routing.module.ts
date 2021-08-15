@@ -15,6 +15,7 @@ import { Edit_profileComponent } from './edit_profile/edit_profile.component';
 import { Products_descriptionComponent } from './products_description/products_description.component';
 import { CartComponent } from './cart/cart.component';
 
+
 const routes: Routes = 
 [
   { path: 'home', component: HomeComponent },
@@ -50,4 +51,4 @@ const routes: Routes =
   ]
 })
 export class AppRoutingModule { }
-export const routingComponents = [ NavbarComponent, HomeComponent, FooterComponent, AboutusComponent, BlogsComponent, LoginSignUpComponent, Cutomer_profileComponent, Edit_profileComponent, Products_descriptionComponent]
+export const routingComponents = [ NavbarComponent, HomeComponent, FooterComponent, AboutusComponent, BlogsComponent, LoginSignUpComponent, Cutomer_profileComponent, Edit_profileComponent, Products_descriptionComponent, CartComponent]

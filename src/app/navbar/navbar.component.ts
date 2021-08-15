@@ -15,10 +15,7 @@ export class NavbarComponent implements OnInit
   IsShow : boolean = false;
 
   constructor(public authService : AuthService, public route : Router) 
-  { 
-    // console.log(this.authService.decodedToken?.nameid);
-    // this.loggedIn();
-  }
+  { }
 
   
 

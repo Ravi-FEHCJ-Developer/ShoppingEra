@@ -20,9 +20,9 @@ export class AuthService {
   
   constructor
   (
+    private toastrService: ToastrService,
     private http: HttpClient,
     private router: Router,
-    // private toastrService: ToastrService
   ) {}
 
   LoginbaseUrl = "https://localhost:5001/api/Auth/Login?";
@@ -33,7 +33,7 @@ export class AuthService {
   
   registerData( Data:any )
   {
-    console.log(Data);
+    // console.log(Data);
     return this.http.post( this.RegisterbaseUrl,Data,{ responseType : "json" });
   }
   login(Data: any) {
@@ -51,21 +51,25 @@ export class AuthService {
           if (user) {
             localStorage.setItem("token", user.token);
             this.decodedToken = this.jwtHelper.decodeToken(user.token);
-            console.table(user);
-            localStorage.setItem("registration_ID", JSON.stringify(user.registration_id));
+            // console.table(user);
+            localStorage.setItem("registration_ID", user.registration_id);
             this.user = JSON.stringify(user);
             console.log("Successfully Logged In");
             this.router.navigate(["/home"]);
-            // this.toastrService.success('Success', 'Major Error', {
-            //   timeOut: 500,
-            //   positionClass: 'toast-bottom-right'
-            // });
+            this.toastrService.success('Successfully', 'Login', {
+              timeOut: 2000,
+              positionClass: 'toast-bottom-right',
+              progressBar: false
+            });
           }
         },
-        (error) => {
-          // this.notification.showNotification(error.error.text, "danger");
-          console.log("Either Email or pwd is wrong!");
-          console.log(error);
+        (error) => 
+        {
+          this.toastrService.error('Either Email or ', 'Password is wrong!', {
+            timeOut: 2000,
+            positionClass: 'toast-bottom-right',
+            progressBar: false
+          });
         }
       );
   }

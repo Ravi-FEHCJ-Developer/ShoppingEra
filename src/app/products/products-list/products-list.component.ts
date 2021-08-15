@@ -8,8 +8,11 @@ import { ProductsCategoryService } from 'src/app/services/productsCategory/produ
 
 import { CategoryFilterService } from '../../services/category_filter/categoryFilter.service';
 
+import { AddToCartService } from '../../services/AddToCart/AddToCart.service'
 
-declare const changeWord : any;
+import { ToastrService } from "ngx-toastr";
+
+// declare const changeWord : any;
 @Component({
   selector: 'app-products-list',
   templateUrl: './products-list.component.html',
@@ -30,9 +33,11 @@ export class ProductsListComponent implements OnInit
   
   constructor
   ( 
+    private toastrService: ToastrService,
     private productsListService : ProductsListService , 
     private productsCategoryService : ProductsCategoryService,
-    private categoryFilterService : CategoryFilterService  
+    private categoryFilterService : CategoryFilterService,
+    private addToCartService  :  AddToCartService  
   ) 
   { 
     this.data = new Array<any>()
@@ -75,6 +80,7 @@ export class ProductsListComponent implements OnInit
         this.totalRecords = res.length
 
         this.ProductsList = res 
+        console.log(this.ProductsList)
       },
       (err) => 
       { 
@@ -210,5 +216,36 @@ export class ProductsListComponent implements OnInit
     )
   }
 
+
+
+  AddToCart( p_id : number , p_quantity : number )
+  {
+    const single_item_details = 
+    {
+      quantity : 1,
+      product_id : p_id,
+      registration_id : parseInt(localStorage.getItem('registration_ID'))
+    }
+    this.addToCartService.AddToCart(single_item_details).subscribe
+    (
+      (res) =>
+      {        
+        this.toastrService.success('Successfully Added', 'in the cart', {
+        timeOut: 2000,
+        positionClass: 'toast-top-right',
+        progressBar: true
+      });
+      },
+      (err) =>
+      {
+        this.toastrService.error('already', 'in the cart', {
+          timeOut: 2000,
+          positionClass: 'toast-top-right',
+          progressBar: true
+        });
+      }
+    )
+    console.table(single_item_details)
+  }
 
 }
