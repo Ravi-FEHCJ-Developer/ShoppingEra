@@ -28,14 +28,7 @@ export class LoginSignUpComponent implements OnInit
           $(".loginform").toggle();
           }); 
       });
-
-
-
-
-
-
-
-      
+ 
   }
 
   // Register Form logic

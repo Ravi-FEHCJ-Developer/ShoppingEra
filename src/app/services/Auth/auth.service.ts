@@ -65,6 +65,7 @@ export class AuthService {
         },
         (error) => 
         {
+          console.log(error);
           this.toastrService.error('Either Email or ', 'Password is wrong!', {
             timeOut: 2000,
             positionClass: 'toast-bottom-right',

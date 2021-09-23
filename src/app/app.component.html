@@ -1,3 +1,4 @@
-<app-navbar></app-navbar>
+<app-navbar [Item_In_cart]=Item_In_cart></app-navbar>
 <router-outlet></router-outlet>
+<app-cart (Cart_Item_Count)="countChangedHandler($event)"></app-cart>
 <app-footer></app-footer>

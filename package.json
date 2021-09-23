@@ -26,6 +26,7 @@
     "@auth0/angular-jwt": "^5.0.2",
     "@ng-bootstrap/ng-bootstrap": "^10.0.0",
     "bja-ngx-pagination": "^0.2.2",
+    "bootstrap": "^5.1.0",
     "jquery": "^3.6.0",
     "ng5-slider": "^1.2.6",
     "ngx-pagination": "^5.1.1",

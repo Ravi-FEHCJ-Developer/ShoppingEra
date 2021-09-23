@@ -378,6 +378,13 @@ body.hero-anime #switch{
 	background-color: rgba(129,103,169,.6);
 }
 
+.dropdown-item.active, .dropdown-item:active, .nav-link:active
+{
+    color: #fff;
+    text-decoration: none;
+    background-color: rgba(129,103,169,.6);
+}
+
 body.dark{
 	color: #fff;
 	background-color: #1f2029;
@@ -526,8 +533,7 @@ body.dark .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 {
 	font-weight: bolder;
 	font-size: 15px;
-	padding: 1px 0px 1px 6px;
-	margin-left: 5px;
-	/* background-color: #8167a9; */
+	padding: 1px 2px 1px 6px;
+	text-align: left;
 	color: #8167a9;
 }

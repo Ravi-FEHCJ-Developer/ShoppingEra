@@ -79,12 +79,11 @@ export class ProductsListComponent implements OnInit
         this.data = res
         this.totalRecords = res.length
 
-        this.ProductsList = res 
-        console.log(this.ProductsList)
+        this.ProductsList = res;
       },
       (err) => 
       { 
-        console.log(err) 
+        console.log("unable to get the products list") 
       }
     )
   }

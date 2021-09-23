@@ -14,6 +14,8 @@ export class AppComponent implements OnInit
 
   title = 'ShoppingEra';
 
+  Item_In_cart : number;
+
   constructor(private authservice : AuthService){}
 
   ngOnInit()
@@ -23,5 +25,9 @@ export class AppComponent implements OnInit
     {
       this.authservice.decodedToken = this.jwtHelper.decodeToken(token);
     }
+  }
+
+  countChangedHandler(count: number) {
+    this.Item_In_cart = count;
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import * as $ from 'jquery';
 import { AuthService } from '../services/Auth/auth.service';
@@ -10,20 +10,22 @@ import { AuthService } from '../services/Auth/auth.service';
 })
 export class NavbarComponent implements OnInit 
 {
-  Item_In_cart : number = 0;
+  // Item_In_cart : number = 0;
+  @Input() Item_In_cart: number;
 
   IsShow : boolean = false;
-
+  
   constructor(public authService : AuthService, public route : Router) 
   { }
-
   
-
+  
+  
   loggedIn()
   {
     this.IsShow = !this.IsShow;
     this.authService.loggedIn();
   }
+  
   
 
   logout()

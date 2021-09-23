@@ -1,7 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { data } from 'jquery';
 import { AddToCartService } from '../services/AddToCart/AddToCart.service';
 import { GetCartItems_Interface } from '../interface/GetCartItems';
+
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -11,17 +13,24 @@ import { GetCartItems_Interface } from '../interface/GetCartItems';
 })
 export class CartComponent implements OnInit {
 
-  // @Input() Item_In_cart = ''; 
+ 
+  @Input() count: number;
+
+  public Item_In_cart : number = 0; 
+  @Output() Cart_Item_Count: EventEmitter<number> =   new EventEmitter();
   GetAllCartItems : GetCartItems_Interface[] = [];
 
-  constructor( private getCartItemsService : AddToCartService) { }
+  constructor
+  ( 
+    private getCartItemsService : AddToCartService,
+    private toastrService: ToastrService 
+  ) { }
 
-    /* Set rates + misc */
+    /* Set rates */
     public totalAmount : number = 0;
     public taxRate : number;
     public shippingRate : number; 
     public GrandTotal : number; 
-    // public fadeTime = 300;
 
   ngOnInit() 
   {
@@ -30,85 +39,6 @@ export class CartComponent implements OnInit {
       // get cart items
       this.GetCartItems(parseInt(localStorage.getItem('registration_ID')));
     }
-
-    /* Set rates + misc */
-    // var taxRate = 0.05;
-    // var shippingRate = 15.00; 
-    // var fadeTime = 300;
-
-
-    /* Assign actions */
-    // $('.product-quantity input').change( function() {
-    //   updateQuantity(this);
-    // });
-
-    // $('.product-removal button').click( function() {
-    //   removeItem(this);
-    // });
-
-
-    /* Recalculate cart */
-    // function recalculateCart()
-    // {
-    //   var subtotal = 0;
-      
-    //   /* Sum up row totals */
-    //   $('.product').each(function () {
-    //     subtotal += parseFloat($(this).children('.product-line-price').text());
-    //   });
-      
-      /* Calculate totals */
-      // var tax = subtotal * taxRate;
-      // var shipping = (subtotal > 0 ? shippingRate : 0);
-      // var total = subtotal + tax + shipping;
-      
-      /* Update totals display */
-    //   $('.totals-value').fadeOut(fadeTime, function() {
-    //     $('#cart-subtotal').html(subtotal.toFixed(2));
-    //     $('#cart-tax').html(tax.toFixed(2));
-    //     $('#cart-shipping').html(shipping.toFixed(2));
-    //     $('#cart-total').html(total.toFixed(2));
-    //     if(total == 0){
-    //       $('.checkout').fadeOut(fadeTime);
-    //     }else{
-    //       $('.checkout').fadeIn(fadeTime);
-    //     }
-    //     $('.totals-value').fadeIn(fadeTime);
-    //   });
-    // }
-
-
-    /* Update quantity */
-    // function updateQuantity(quantityInput)
-    // {
-    //   console.log(quantityInput)
-      /* Calculate line price */
-      // const productRow = $(quantityInput).parent().parent();
-      // const price = parseFloat(productRow.children('.product-price').text());
-      // const quantity =  $("input[type='number']").val();
-      // var linePrice = price * Number(quantity);
-      
-      /* Update line price display and recalc cart totals */
-    //   productRow.children('.product-line-price').each(function () {
-    //     $(this).fadeOut(fadeTime, function() {
-    //       $(this).text(linePrice.toFixed(2));
-    //       recalculateCart();
-    //       $(this).fadeIn(fadeTime);
-    //     });
-    //   });  
-    // }
-
-
-    /* Remove item from cart */
-    // function removeItem(removeButton)
-    // {
-    //   /* Remove row from DOM and recalc cart total */
-    //   var productRow = $(removeButton).parent().parent();
-    //   productRow.slideUp(fadeTime, function() {
-    //     productRow.remove();
-    //     recalculateCart();
-    //   });
-    // }
   }
 
   onQuantityChange(event:Event, unit_price : number)
@@ -123,6 +53,8 @@ export class CartComponent implements OnInit {
       (data) =>
       {
         this.GetAllCartItems = data
+        this.Item_In_cart = this.GetAllCartItems.length;
+        this.Cart_Item_Count.emit(this.GetAllCartItems.length)
         for(let i = 0; i<this.GetAllCartItems.length; i++)
         {
           this.totalAmount = this.totalAmount + this.GetAllCartItems[i].p_price 
@@ -133,7 +65,11 @@ export class CartComponent implements OnInit {
       },
       (err) =>
       {
-        console.log(err);
+        this.toastrService.error('already', 'in the cart', {
+          timeOut: 2000,
+          positionClass: 'toast-top-right',
+          progressBar: true
+        });
       }
     )
   }
